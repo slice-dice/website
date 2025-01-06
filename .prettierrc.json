@@ -26,6 +26,13 @@
                 "parser": "html",
                 "printWidth": 125
             }
+        },
+        {
+            "files": ["*.mdx"],
+            "options": {
+                "parser": "mdx",
+                "printWidth": 125
+            }
         }
     ]
 }
