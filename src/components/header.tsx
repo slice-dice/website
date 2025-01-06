@@ -1,7 +1,8 @@
+import { Home } from 'lucide-react'
+
 import { ReactElement } from 'react'
 import Link from 'next/link'
 import { NavLink } from './nav-link'
-import { Home } from 'lucide-react'
 
 function Brand(): ReactElement {
     return (
