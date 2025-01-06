@@ -30,7 +30,7 @@ export default async function RootLayout({
                     <Header />
                     <Hero />
                     <div className="px-6 pb-0 pt-6 sm:px-8 sm:pt-8 lg:px-16 lg:pt-16 xl:px-20 xl:pt-20">
-                        <main className="mx-auto max-w-[880px]">{children}</main>
+                        <main className="mx-auto mb-20 max-w-[880px]">{children}</main>
                     </div>
                     <Footer />
                 </div>
