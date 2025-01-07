@@ -27,7 +27,7 @@ export async function Footer(): Promise<ReactElement> {
                         <Mail size={24} />
                         contatti
                     </FooterLink>
-                    <FooterLink href="/">
+                    <FooterLink href="/proposte">
                         <MessageSquareText size={24} />
                         proposte
                     </FooterLink>
