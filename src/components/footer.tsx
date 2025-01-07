@@ -23,7 +23,7 @@ export async function Footer(): Promise<ReactElement> {
         <footer className="bg-background p-4 text-center text-white" style={{ boxShadow: '0 0 10px 0 rgba(0,0,0,0.5)' }}>
             <div className="mx-auto flex max-w-[880px] flex-col flex-wrap gap-6 md:gap-8">
                 <section className="flex flex-col flex-wrap justify-center md:flex-row">
-                    <FooterLink href="/">
+                    <FooterLink href="/contatti">
                         <Mail size={24} />
                         contatti
                     </FooterLink>
