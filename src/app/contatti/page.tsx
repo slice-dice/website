@@ -1,4 +1,4 @@
-import Contacts from '../../../docs/7-contacts.mdx'
+import Contacts from '../../../docs/contacts.mdx'
 
 export default function Home() {
     return (

@@ -1,4 +1,4 @@
-import About from '../../docs/1-about.mdx'
+import About from '../../docs/about.mdx'
 
 export default function Home() {
     return (
