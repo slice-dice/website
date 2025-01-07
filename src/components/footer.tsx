@@ -31,7 +31,7 @@ export async function Footer(): Promise<ReactElement> {
                         <MessageSquareText size={24} />
                         proposte
                     </FooterLink>
-                    <FooterLink href="/">
+                    <FooterLink href="/ringraziamenti">
                         <Star size={24} />
                         ringraziamenti
                     </FooterLink>
