@@ -1,4 +1,4 @@
-import { Home } from 'lucide-react'
+import { CircleHelp, Home } from 'lucide-react'
 
 import { ReactElement } from 'react'
 import Link from 'next/link'
@@ -22,10 +22,14 @@ export async function Header(): Promise<ReactElement> {
             <div className="flex flex-wrap items-center py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12">
                 <Brand />
                 <div className="relative ml-auto flex w-full items-center lg:w-auto">
-                    <nav className="m-0 flex flex-wrap gap-4 p-0 text-lg lg:py-2">
+                    <nav className="m-0 flex flex-wrap gap-8 p-0 text-lg lg:py-2">
                         <NavLink href="/">
                             <Home size={22} />
                             Cos&apos;è Slice & Dice?
+                        </NavLink>
+                        <NavLink href="/faq">
+                            <CircleHelp size={22} fill={`black`} stroke="white" />
+                            F.A.Q.
                         </NavLink>
                     </nav>
                 </div>
