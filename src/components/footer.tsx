@@ -35,7 +35,7 @@ export async function Footer(): Promise<ReactElement> {
                         <Star size={24} />
                         ringraziamenti
                     </FooterLink>
-                    <FooterLink href="/">
+                    <FooterLink href="/copyright">
                         <Pencil size={24} />
                         copyright
                     </FooterLink>
