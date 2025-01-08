@@ -11,7 +11,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             </h1>
         ),
         h2: ({ children }: { children: React.ReactNode }) => (
-            <h2 className="m-0 mb-8 break-words p-0 pb-4 text-center text-2xl font-bold">
+            <h2 className="m-0 mb-8 break-words p-0 pb-4 text-center text-[1.75rem] font-bold">
                 <p className="bg-[#094f56] leading-[30px] text-white">{children}</p>
             </h2>
         ),
