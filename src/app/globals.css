@@ -12,3 +12,11 @@ body {
     background: var(--background);
     font-family: var(--font-barlow), Arial, Helvetica, sans-serif;
 }
+
+article {
+    blockquote {
+        p {
+            margin-bottom: 0 !important;
+        }
+    }
+}
