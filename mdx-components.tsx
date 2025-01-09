@@ -18,6 +18,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         blockquote: ({ children }: { children: React.ReactNode }) => (
             <blockquote className="relative mb-6 border-l-4 border-[#094f56] p-5">{children}</blockquote>
         ),
+        a: ({ children, href }: { children: React.ReactNode; href: string }) => (
+            <a className="text-[#CC4A49] underline hover:no-underline" href={href}>
+                {children}
+            </a>
+        ),
         ...components,
     }
 }
