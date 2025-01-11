@@ -1,0 +1,2 @@
+# Ignore all MDX files to prevent unwanted JSX line wrapping
+*.mdx
