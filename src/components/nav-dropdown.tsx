@@ -10,7 +10,7 @@ type NavDropdownContextType = {
     setIsOpen: Dispatch<SetStateAction<boolean>>
     toggle: () => void
     hasActiveLink: boolean
-    handleDropdownActiveLink: () => void
+    handleDropdownActiveLink: (v: boolean) => void
 }
 
 const NavDropdownContext = createContext<NavDropdownContextType>({
@@ -52,8 +52,8 @@ function NavDropdownProvider({ children }: { children: ReactNode }): ReactElemen
         return () => document.removeEventListener('keydown', handleKeyDown)
     }, [])
 
-    const handleDropdownActiveLink = () => {
-        setHasActiveLink(true)
+    const handleDropdownActiveLink = (v: boolean) => {
+        setHasActiveLink(v)
     }
 
     const value = {
@@ -113,9 +113,7 @@ export function NavDropdownItem({ href, children }: { href: string; children: Re
     const { isActiveLink } = useActiveLink(href)
 
     useEffect(() => {
-        if (isActiveLink) {
-            handleDropdownActiveLink()
-        }
+        handleDropdownActiveLink(isActiveLink)
     }, [isActiveLink, handleDropdownActiveLink])
 
     return (
