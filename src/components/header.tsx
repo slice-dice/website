@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { NavLink } from './nav-link'
 import { NavDropdown, NavDropdownTrigger, NavDropdownMenu, NavDropdownItem } from './nav-dropdown'
 
+import { gameplaySystems } from '@/data/gameplay-systems'
+
 function Brand(): ReactElement {
     return (
         <div className="m-0 flex max-w-full flex-col justify-center p-0">
@@ -38,9 +40,11 @@ export async function Header(): Promise<ReactElement> {
                                 Sistemi di Gioco
                             </NavDropdownTrigger>
                             <NavDropdownMenu>
-                                <NavDropdownItem href="/sistemi-di-gioco/basic-role-playing">
-                                    Basic Role Playing
-                                </NavDropdownItem>
+                                {gameplaySystems.map(({ name, url }) => (
+                                    <NavDropdownItem key={url} href={url}>
+                                        {name}
+                                    </NavDropdownItem>
+                                ))}
                             </NavDropdownMenu>
                         </NavDropdown>
                     </nav>
