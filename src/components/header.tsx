@@ -41,7 +41,7 @@ export async function Header(): Promise<ReactElement> {
                             </NavDropdownTrigger>
                             <NavDropdownMenu>
                                 {gameplaySystems.map(({ name, url }) => (
-                                    <NavDropdownItem key={url} href={url}>
+                                    <NavDropdownItem key={url} href={`/sistemi-di-gioco/${url}`}>
                                         {name}
                                     </NavDropdownItem>
                                 ))}

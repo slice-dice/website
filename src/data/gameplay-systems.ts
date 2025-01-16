@@ -6,6 +6,6 @@ interface GameplaySystem {
 export const gameplaySystems: GameplaySystem[] = [
     {
         name: 'Basic Role Playing',
-        url: '/sistemi-di-gioco/basic-role-playing',
+        url: 'basic-role-playing',
     },
 ]
