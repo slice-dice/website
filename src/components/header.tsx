@@ -1,8 +1,9 @@
-import { CircleHelp, Home } from 'lucide-react'
+import { BookText, CircleHelp, Home } from 'lucide-react'
 
 import { ReactElement } from 'react'
 import Link from 'next/link'
 import { NavLink } from './nav-link'
+import { NavDropdown, NavDropdownTrigger, NavDropdownMenu, NavDropdownItem } from './nav-dropdown'
 
 function Brand(): ReactElement {
     return (
@@ -28,9 +29,20 @@ export async function Header(): Promise<ReactElement> {
                             Cos&apos;è Slice & Dice?
                         </NavLink>
                         <NavLink href="/faq">
-                            <CircleHelp size={22} fill={`black`} stroke="white" />
+                            <CircleHelp size={22} />
                             F.A.Q.
                         </NavLink>
+                        <NavDropdown>
+                            <NavDropdownTrigger>
+                                <BookText size={22} />
+                                Sistemi di Gioco
+                            </NavDropdownTrigger>
+                            <NavDropdownMenu>
+                                <NavDropdownItem href="/sistemi-di-gioco/basic-role-playing">
+                                    Basic Role Playing
+                                </NavDropdownItem>
+                            </NavDropdownMenu>
+                        </NavDropdown>
                     </nav>
                 </div>
             </div>

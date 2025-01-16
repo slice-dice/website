@@ -1,12 +1,18 @@
 import type { MDXComponents } from 'mdx/types'
+import Image from 'next/image'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
+        /**
+         * Default components
+         */
         p: ({ children }: { children: React.ReactNode }) => (
-            <p className="mb-8 text-justify text-base lg:text-lg xl:text-xl">{children}</p>
+            <p className="mb-8 p-5 text-justify text-[1.0625rem] leading-[1.75] sm:text-[1.0625rem] sm:leading-[1.75] lg:text-[1.125rem] lg:leading-[1.75] xl:text-[1.1875rem] xl:leading-[1.75]">
+                {children}
+            </p>
         ),
         h1: ({ children }: { children: React.ReactNode }) => (
-            <h1 className="m-0 break-words p-0 pb-4 text-2xl font-bold text-[#CC4A49] sm:pb-6 sm:text-3xl lg:pb-7 lg:text-4xl xl:pb-8 xl:text-5xl">
+            <h1 className="m-0 mb-4 break-words p-0 text-2xl font-bold text-[#CC4A49] sm:mb-6 sm:text-3xl lg:mb-7 lg:text-4xl xl:mb-8 xl:text-5xl">
                 {children}
             </h1>
         ),
@@ -15,14 +21,82 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 <p className="bg-[#094f56] leading-[30px] text-white">{children}</p>
             </h2>
         ),
+        h3: ({ children }: { children: React.ReactNode }) => (
+            <h3 className="mb-3 mt-4 break-words p-0 text-center text-[1.75rem] font-bold">
+                <p className="m-auto w-[20%] bg-[#CC4A49] text-[80%] leading-[30px] text-white">{children}</p>
+            </h3>
+        ),
         blockquote: ({ children }: { children: React.ReactNode }) => (
-            <blockquote className="relative mb-6 border-l-4 border-[#094f56] p-5">{children}</blockquote>
+            <blockquote className="relative mb-8 border-l-4 border-[#094f56]">{children}</blockquote>
         ),
         a: ({ children, href }: { children: React.ReactNode; href: string }) => (
             <a className="text-[#CC4A49] underline hover:no-underline" href={href}>
                 {children}
             </a>
         ),
+        img: ({ src, alt, title }: { src: string; alt: string; title: string }) => (
+            <Image src={src} alt={alt} title={title} width={512} height={342} />
+        ),
+
+        /**
+         * Custom components
+         */
+        // Table
+        Table: ({ children }: { children: React.ReactNode }) => (
+            <div className="mb-4 overflow-x-auto pb-6">
+                <table className="w-full table-fixed">{children}</table>
+            </div>
+        ),
+        Thead: ({ children }: { children: React.ReactNode }) => <thead>{children}</thead>,
+        Tbody: ({ children }: { children: React.ReactNode }) => <tbody>{children}</tbody>,
+        Tr: ({ children }: { children: React.ReactNode }) => <tr>{children}</tr>,
+        Th: ({ children }: { children: React.ReactNode }) => (
+            <th className="border px-[0.6rem] py-[0.4rem] text-center text-base font-bold lg:text-lg xl:text-xl">
+                {children}
+            </th>
+        ),
+        Td: ({ children, align = 'center' }: { children: React.ReactNode; align: string }) => (
+            <td className={`border px-[0.6rem] py-[0.4rem] text-base lg:text-lg xl:text-xl ${align && `text-${align}`}`}>
+                {children}
+            </td>
+        ),
+        // Anchor
+        Anchor: ({ children }: { children: React.ReactNode }) => (
+            <div className="mb-8 flex justify-center text-[#CC4A49]">
+                <b>Enlaces rápidos.</b>
+                {children}
+            </div>
+        ),
+        // Index
+        Index: ({ children }: { children: React.ReactNode }) => (
+            <div className="mb-8 space-x-2 text-justify text-[#CC4A49]">
+                <b>Indice.</b>
+                {children}
+            </div>
+        ),
+        IndexItem: ({ children }: { children: React.ReactNode }) => <span>{children}</span>,
+        // ImageBlock
+        ImageBlock: ({ children }: { children: React.ReactNode }) => <div className="mb-6 pb-4">{children}</div>,
+        Image: ({ children }: { children: React.ReactNode }) => (
+            <div className="flex items-center justify-center">
+                <div className="border-y-[5px] border-[#CC4A49]">{children}</div>
+            </div>
+        ),
+        ImageCaption: ({ children }: { children: React.ReactNode }) => (
+            <div className="mt-2 text-center text-[12px] text-black/50">{children}</div>
+        ),
+        // CenterBlock
+        CenterBlock: ({ children }: { children: React.ReactNode }) => <div className="mx-auto w-[80%]">{children}</div>,
+        // ShoppingTips
+        ShoppingTips: ({ children }: { children: React.ReactNode }) => (
+            <h3 className="mb-3 mt-4 break-words p-0 text-center text-[1.75rem] font-bold">
+                <p className="m-auto w-[20%] rounded bg-[#094f56] p-[5px] text-[70%] leading-[30px] text-white">
+                    {children}
+                </p>
+            </h3>
+        ),
+
+        //
         ...components,
     }
 }
