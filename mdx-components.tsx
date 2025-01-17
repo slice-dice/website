@@ -1,5 +1,6 @@
 import type { MDXComponents } from 'mdx/types'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
@@ -61,12 +62,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             </td>
         ),
         // Anchor
-        Anchor: ({ children }: { children: React.ReactNode }) => (
-            <div className="mb-8 flex justify-center text-[#CC4A49]">
-                <b>Enlaces rápidos.</b>
-                {children}
-            </div>
-        ),
+        Anchor: ({ id }: { id: string }) => <a id={id} style={{ visibility: 'hidden' }} />,
         // Index
         Index: ({ children }: { children: React.ReactNode }) => (
             <div className="mb-8 space-x-2 text-justify text-[#CC4A49]">
@@ -74,7 +70,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 {children}
             </div>
         ),
-        IndexItem: ({ children }: { children: React.ReactNode }) => <span>{children}</span>,
+        IndexItem: ({ to, children }: { to: string; children: React.ReactNode }) => (
+            <Link href={`#${to}`} className="text-[#CC4A49] underline hover:no-underline">
+                {children}
+            </Link>
+        ),
         // ImageBlock
         ImageBlock: ({ children }: { children: React.ReactNode }) => <div className="mb-6 pb-4">{children}</div>,
         Image: ({ children }: { children: React.ReactNode }) => (
