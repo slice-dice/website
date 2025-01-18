@@ -24,7 +24,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ),
         h3: ({ children }: { children: React.ReactNode }) => (
             <h3 className="mb-3 mt-4 break-words p-0 text-center text-[1.75rem] font-bold">
-                <p className="m-auto w-[20%] bg-[#CC4A49] text-[80%] leading-[30px] text-white">{children}</p>
+                <p className="m-auto w-[80%] bg-[#CC4A49] text-[80%] leading-[30px] text-white sm:w-[30%] lg:w-[20%]">
+                    {children}
+                </p>
             </h3>
         ),
         blockquote: ({ children }: { children: React.ReactNode }) => (
@@ -80,7 +82,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         // ShoppingTips
         ShoppingTips: ({ children }: { children: React.ReactNode }) => (
             <h3 className="mb-3 mt-4 break-words p-0 text-center text-[1.75rem] font-bold">
-                <p className="m-auto w-[20%] rounded bg-[#094f56] p-[5px] text-[70%] leading-[30px] text-white">
+                <p className="m-auto w-[80%] rounded bg-[#094f56] p-[5px] text-[70%] leading-[30px] text-white sm:w-[40%] lg:w-[20%]">
                     {children}
                 </p>
             </h3>
