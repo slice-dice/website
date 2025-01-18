@@ -1,6 +1,6 @@
 import type { MDXComponents } from 'mdx/types'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Anchor, TableOfContent, TableOfContentId } from '@/components/table-of-content'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
@@ -61,20 +61,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 {children}
             </td>
         ),
+        // TableOfContent
+        TableOfContent: ({ ids }: { ids: TableOfContentId[] }) => <TableOfContent ids={ids} />,
         // Anchor
-        Anchor: ({ id }: { id: string }) => <a id={id} style={{ visibility: 'hidden' }} />,
-        // Index
-        Index: ({ children }: { children: React.ReactNode }) => (
-            <div className="mb-8 space-x-2 text-justify text-[#CC4A49]">
-                <b>Indice.</b>
-                {children}
-            </div>
-        ),
-        IndexItem: ({ to, children }: { to: string; children: React.ReactNode }) => (
-            <Link href={`#${to}`} className="text-[#CC4A49] underline hover:no-underline">
-                {children}
-            </Link>
-        ),
+        Anchor: ({ id }: { id: string }) => <Anchor id={id} />,
         // ImageBlock
         ImageBlock: ({ children }: { children: React.ReactNode }) => <div className="mb-6 pb-4">{children}</div>,
         Image: ({ children }: { children: React.ReactNode }) => (
