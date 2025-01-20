@@ -57,7 +57,7 @@ function MenuToggle(): ReactElement {
             ) : (
                 <MenuIcon size={28} className="m-0 block align-top" />
             )}
-            <span className="inline-flex">Menu</span>
+            <span className="hidden sm:inline-flex">Menu</span>
         </button>
     )
 }
