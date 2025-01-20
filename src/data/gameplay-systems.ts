@@ -12,4 +12,8 @@ export const gameplaySystems: GameplaySystem[] = [
         name: 'Cypher System',
         url: 'cypher-system',
     },
+    {
+        name: 'd20 system',
+        url: 'd20-system',
+    },
 ]
