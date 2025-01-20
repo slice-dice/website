@@ -4,7 +4,7 @@ import { ReactElement, ReactNode } from 'react'
 import { useActiveLink } from '@/hooks/useActiveLink'
 import Link from 'next/link'
 
-export function NavLink({ href, children }: { href: string; children: ReactNode }): ReactElement {
+export function NavbarLink({ href, children }: { href: string; children: ReactNode }): ReactElement {
     const { isActiveLink } = useActiveLink(href)
 
     return (

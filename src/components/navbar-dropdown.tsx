@@ -5,7 +5,7 @@ import { createContext, Dispatch, ReactElement, ReactNode, SetStateAction, useCo
 
 import { useActiveLink } from '@/hooks/useActiveLink'
 
-type NavDropdownContextType = {
+type NavbarDropdownContextType = {
     isOpen: boolean
     setIsOpen: Dispatch<SetStateAction<boolean>>
     toggle: () => void
@@ -13,7 +13,7 @@ type NavDropdownContextType = {
     handleDropdownActiveLink: (v: boolean) => void
 }
 
-const NavDropdownContext = createContext<NavDropdownContextType>({
+const NavbarDropdownContext = createContext<NavbarDropdownContextType>({
     isOpen: false,
     setIsOpen: () => {},
     toggle: () => {},
@@ -21,7 +21,7 @@ const NavDropdownContext = createContext<NavDropdownContextType>({
     handleDropdownActiveLink: () => {},
 })
 
-function NavDropdownProvider({ children }: { children: ReactNode }): ReactElement {
+function NavbarDropdownProvider({ children }: { children: ReactNode }): ReactElement {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const toggle = () => setIsOpen(!isOpen)
 
@@ -31,7 +31,7 @@ function NavDropdownProvider({ children }: { children: ReactNode }): ReactElemen
     useEffect(() => {
         const handleClick = (event: MouseEvent) => {
             const target = event.target as HTMLElement
-            if (!target.closest('.nav-dropdown')) {
+            if (!target.closest('.navbar-dropdown')) {
                 setIsOpen(false)
             }
         }
@@ -64,27 +64,27 @@ function NavDropdownProvider({ children }: { children: ReactNode }): ReactElemen
         handleDropdownActiveLink,
     }
 
-    return <NavDropdownContext.Provider value={value}>{children}</NavDropdownContext.Provider>
+    return <NavbarDropdownContext.Provider value={value}>{children}</NavbarDropdownContext.Provider>
 }
 
-function useNavDropdown(): NavDropdownContextType {
-    const context = useContext(NavDropdownContext)
+function useNavbarDropdown(): NavbarDropdownContextType {
+    const context = useContext(NavbarDropdownContext)
     if (context === undefined) {
-        throw new Error('useNavDropdown must be used within a NavDropdownProvider')
+        throw new Error('useNavbarDropdown must be used within a NavbarDropdownProvider')
     }
     return context
 }
 
-export function NavDropdown({ children }: { children: ReactNode }): ReactElement {
+export function NavbarDropdown({ children }: { children: ReactNode }): ReactElement {
     return (
-        <NavDropdownProvider>
-            <div className="nav-dropdown">{children}</div>
-        </NavDropdownProvider>
+        <NavbarDropdownProvider>
+            <div className="navbar-dropdown">{children}</div>
+        </NavbarDropdownProvider>
     )
 }
 
-export function NavDropdownTrigger({ children }: { children: ReactNode }): ReactElement {
-    const { toggle, isOpen, hasActiveLink } = useNavDropdown()
+export function NavbarDropdownTrigger({ children }: { children: ReactNode }): ReactElement {
+    const { toggle, isOpen, hasActiveLink } = useNavbarDropdown()
 
     return (
         <button
@@ -96,8 +96,8 @@ export function NavDropdownTrigger({ children }: { children: ReactNode }): React
     )
 }
 
-export function NavDropdownMenu({ children }: { children: ReactNode }): ReactElement {
-    const { isOpen } = useNavDropdown()
+export function NavbarDropdownMenu({ children }: { children: ReactNode }): ReactElement {
+    const { isOpen } = useNavbarDropdown()
 
     return (
         <div
@@ -108,8 +108,8 @@ export function NavDropdownMenu({ children }: { children: ReactNode }): ReactEle
     )
 }
 
-export function NavDropdownItem({ href, children }: { href: string; children: ReactNode }): ReactElement {
-    const { handleDropdownActiveLink } = useNavDropdown()
+export function NavbarDropdownItem({ href, children }: { href: string; children: ReactNode }): ReactElement {
+    const { handleDropdownActiveLink } = useNavbarDropdown()
     const { isActiveLink } = useActiveLink(href)
 
     useEffect(() => {
