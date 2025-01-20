@@ -1,0 +1,524 @@
+# GURPS
+
+<TableOfContent
+    ids={[
+        {
+            id: "intro",
+            title: "Introduzione"
+        },
+        {
+            id: "punti-forti-deboli",
+            title: "Punti di forza e debolezza"
+        },
+        {
+            id: "creazione",
+            title: "Creazione del personaggio"
+        },
+        {
+            id: "progressione",
+            title: "Progressione del personaggio"
+        },
+        {
+            id: "meccaniche",
+            title: "Meccaniche di gioco"
+        },
+        {
+            id: "distribuzione-probabilità",
+            title: "Distribuzione delle probabilità"
+        },
+        {
+            id: "conflitti",
+            title: "Conflitti"
+        },
+        {
+            id: "guarigione",
+            title: "Guarigione"
+        },
+        {
+            id: "equipaggiamento",
+            title: "Equipaggiamento"
+        },
+        {
+            id: "simulazione-combattimento",
+            title: "Simulazione di combattimento"
+        },
+        {
+            id: "accorgimenti",
+            title: "Accorgimenti"
+        }
+    ]}
+/>
+
+<Anchor id="intro" />
+## Introduzione
+GURPS è un sistema di gioco universale: il core base offre una panoramica molto ampia sulla risoluzione di quasi tutte le situazioni, ma sono stati realizzati sia dei supplementi ufficiali che amatoriali per diverse ambientazioni. \
+GURPS punta ad un tipo di **gioco simulazionista** con tiri abilità basati sul lancio di 3d6 e una caratterizzazione del personaggio che può coinvolgere anche aspetti piuttosto mondani della vita, fornendo un “costo” ad ogni singolo vantaggio/svantaggio al fine di bilanciare il tutto.
+
+<ImageBlock>
+    <Image>![Poker Game di Saul Tepper](/images/sistemi-di-gioco/gurps-1.png 'Poker Game di Saul Tepper')</Image>
+    <ImageCaption>Poker Game di Saul Tepper.</ImageCaption>
+</ImageBlock>
+
+<Anchor id="punti-forti-deboli" />
+### Punti di forza
+<CenterBlock>
+Sebbene si tratti di un sistema meno noto rispetto ai più blasonati D&D e VtM, GURPS ha alle spalle quasi quarant’anni di storia editoriale, con tutto ciò che questo implica in termini di completezza delle regole, ricchezza dei supplementi legati a specifici setting e community di appassionati da cui attingere per consigli e adattamenti. \
+Uno dei maggiori punti di forza di GURPS è la sua verosimiglianza: il sistema restituisce un complesso di risoluzioni molto realistiche e poco cinematografiche. \
+GURPS è un sistema con cui si può giocare, letteralmente, a tutto, a patto ovviamente di ritagliarlo su misura. È più probabile che l’aspirante gestore debba levare qualcosa, anziché aggiungere.\
+Inoltre, se è vero che ad una prima occhiata il sistema può risultare complesso, è anche vero che esso si presta ad essere integralmente automatizzato, rendendo così l’esperienza del giocatore molto più semplice di quanto non possa pensarsi.
+</CenterBlock>
+
+### Punti di debolezza
+<CenterBlock>
+Il combattimento risulta per forza di cose la più caotica della situazioni da sbrogliare. Il gioco punta ad un certo grado di realismo nel suo utilizzo di una distribuzione di probabilità bernoulliana che rende i successi estremamente più probabili con valori alti e estremamente improbabili con valori bassi. Il problema principale di questo sistema, se lasciato svincolato da qualsiasi controllo, è l’**ultra-specializzazione** dei personaggi dovuta a build molto specifiche che portano ad un appiattimento del grado di sfida di combattimenti o altre situazioni avverse; potrebbe essere necessario quindi definire un cap di punti spendibili in determinati attributi. \
+L’implementazione del sistema si presta meglio a land con molti automatismi e ai videogiochi: i primi Fallout (quelli in visuale isometrica) erano basati su una versione modificata e riadattata del GURPS.
+</CenterBlock>
+
+<Anchor id="creazione" />
+## Creazione del personaggio
+Tutto quello che riguarda la creazione del personaggio viene acquisito tramite l’uso di punti creazione, il cui quantitativo viene definito dal master ad inizio campagna.\
+Il massimale di punti creazione del personaggio va definito in base a quanti sono i valori che si decide di utilizzare e può quindi variare moltissimo tra un’ambientazione e l’altra. Tra risorse utili (vedi in fondo) è inserito un link ad una serie di manuali esterni e ambientazioni possibili in GURPS.\
+Non vi è alcun limite ufficiale al numero di punti che possono essere spesi in determinate categorie: un personaggio potrebbe potenzialmente avere punti investiti completamente in attributi e nessuno in abilità o al contrario avere un grosso numero di punti investiti in abilità e vantaggi e lasciare gli attributi a valori medi.\
+Il sistema di GURPS è totalmente libero e slegato da qualsivoglia classe: solo il master può definire il set di abilità, vantaggi, svantaggi e simili attribuibili ad un personaggio in una data ambientazione.
+
+### Attributi
+<CenterBlock>
+I personaggi hanno quattro **Attributi**:\
+\
+✑ Forza. Definisce il carico trasportabile, parte della salute e il danno inflitto in corpo a corpo.\
+✑ Salute. Indica la capacità di resistere ai danni e sostenere sforzi prolungati.\
+✑ Destrezza. Velocità e agilità del personaggio. La base delle abilità fisiche.\
+✑ Intelligenza. La base delle abilità mentali.\
+\
+Esistono inoltre delle caratteristiche secondarie calcolate in seguito all’assegnazione delle prime:\
+\
+✑ <ins>Punti Ferita</ins>: Uguali al punteggio di Forza. Il loro significato è piuttosto intuitivo.\
+✑ <ins>Percezione</ins>: Uguale al punteggio di Intelligenza. Indica l’attenzione del personaggio e lo sviluppo dei suoi sensi.\
+✑ <ins>Volontà</ins>: Uguale al punteggio di Intelligenza. Utile per resistere a manipolazioni mentali di natura magica e sociale.\
+✑ <ins>Punti Fatica</ins>: Uguali a Salute. Indicano quanto sforzo fisico può sostenere il personaggio.\
+✑ <ins>Velocità Base</ins>: Uguale a (Salute + Destrezza / 4), serve a risolvere l’iniziativa e ad indicare quale personaggio agisce per primo. Questo punteggio può mantenere un valore frazionato (5.75 è superiore a 5.25)\
+✑ <ins>Schivata</ins>: È pari a Velocità Base + 3, arrotondato per difetto. Indica il tiro da superare per schivare un attacco.\
+✑ <ins>Movimento Base</ins>: Uguale a Velocità Base arrotondata per difetto. Indica di quanti metri può muovere un personaggio in un turno se privo di ingombri.\
+✑ <ins>Danno Base</ins>: Indica i danni che un personaggio infligge se disarmato o con armi azionate dalla forza umana (tutte le armi bianche, quelle da lancio, archi e fionde). Si basa sulla Forza e segue le logiche di questa tabella, dove con Affondo si intendono calci, pugni, affondi con alcune armi da taglio e con Fendente i colpi di spada, ascia, mazza e così via. Si segnano separati ed ordinati.
+</CenterBlock>
+
+<Table>
+    <Thead>
+        <Tr>
+            <Th>Forza</Th>
+            <Th>Affondo</Th>
+            <Th>Fendente</Th>
+        </Tr>
+    </Thead>
+    <Tbody>
+        <Tr>
+            <Td>1</Td>
+            <Td>1d-6</Td>
+            <Td>1d-5</Td>
+        </Tr>
+        <Tr>
+            <Td>2</Td>
+            <Td>1d-6</Td>
+            <Td>1d-5</Td>
+        </Tr>
+        <Tr>
+            <Td>3</Td>
+            <Td>1d-5</Td>
+            <Td>1d-4</Td>
+        </Tr>
+        <Tr>
+            <Td>4</Td>
+            <Td>1d-5</Td>
+            <Td>1d-4</Td>
+        </Tr>
+        <Tr>
+            <Td>5</Td>
+            <Td>1d-4</Td>
+            <Td>1d-3</Td>
+        </Tr>
+        <Tr>
+            <Td>6</Td>
+            <Td>1d-4</Td>
+            <Td>1d-3</Td>
+        </Tr>
+        <Tr>
+            <Td>7</Td>
+            <Td>1d-3</Td>
+            <Td>1d-2</Td>
+        </Tr>
+        <Tr>
+            <Td>8</Td>
+            <Td>1d-3</Td>
+            <Td>1d-2</Td>
+        </Tr>
+        <Tr>
+            <Td>9</Td>
+            <Td>1d-2</Td>
+            <Td>1d-1</Td>
+        </Tr>
+        <Tr>
+            <Td>10</Td>
+            <Td>1d-2</Td>
+            <Td>1d</Td>
+        </Tr>
+        <Tr>
+            <Td>11</Td>
+            <Td>1d-1</Td>
+            <Td>1d+1</Td>
+        </Tr>
+        <Tr>
+            <Td>12</Td>
+            <Td>1d-1</Td>
+            <Td>1d+2</Td>
+        </Tr>
+        <Tr>
+            <Td>13</Td>
+            <Td>1d</Td>
+            <Td>2d-1</Td>
+        </Tr>
+        <Tr>
+            <Td>14</Td>
+            <Td>1d</Td>
+            <Td>2d</Td>
+        </Tr>
+        <Tr>
+            <Td>15</Td>
+            <Td>1d+1</Td>
+            <Td>2d+1</Td>
+        </Tr>
+        <Tr>
+            <Td>16</Td>
+            <Td>1d+1</Td>
+            <Td>2d+2</Td>
+        </Tr>
+        <Tr>
+            <Td>17</Td>
+            <Td>1d+2</Td>
+            <Td>3d-1</Td>
+        </Tr>
+        <Tr>
+            <Td>18</Td>
+            <Td>1d+2</Td>
+            <Td>3d</Td>
+        </Tr>
+        <Tr>
+            <Td>19</Td>
+            <Td>2d-1</Td>
+            <Td>3d+1</Td>
+        </Tr>
+        <Tr>
+            <Td>20</Td>
+            <Td>2d-1</Td>
+            <Td>3d+2</Td>
+        </Tr>
+    </Tbody>
+</Table>
+
+<CenterBlock>
+Partendo da 10, che rappresenta la media per ogni attributo, ogni singolo punto al di sopra ha un costo pari a 10pt per gli attributi Forza e Salute e di 20pt per gli attributi Intelligenza e Destrezza, mentre scendere al di sotto della media fa guadagnare altrettanti punti man mano che si scende fino ad un minimo di 1 (che implica problemi fisici e/o intellettivi gravi).
+</CenterBlock>
+
+### Abilità
+<CenterBlock>
+Le **Abilità** si dividono in fisiche (motorie e combattive basate sulla destrezza) e mentali (conoscitive e psicologiche basate sull’intelligenza) e hanno diversi livelli di difficoltà (facile, media, difficile, molto difficile) all’aumento del quale sono più difficili da padroneggiare (e richiedono quindi un investimento maggiore di punti per poter essere usate efficacemente). Il punteggio base delle abilità parte dalle caratteristiche ed è definito in questa tabella.
+</CenterBlock>
+
+<Table>
+    <Thead>
+        <Tr>
+            <Th>Livello dell’abilità</Th>
+            <Th>Facile</Th>
+            <Th>Medio</Th>
+            <Th>Difficile</Th>
+            <Th>Molto difficile</Th>
+        </Tr>
+    </Thead>
+    <Tbody>
+        <Tr>
+            <Td>Attributo-3</Td>
+            <Td>–</Td>
+            <Td>–</Td>
+            <Td>–</Td>
+            <Td>1</Td>
+        </Tr>
+        <Tr>
+            <Td>Attributo-2</Td>
+            <Td>–</Td>
+            <Td>–</Td>
+            <Td>1</Td>
+            <Td>2</Td>
+        </Tr>
+        <Tr>
+            <Td>Attributo-1</Td>
+            <Td>–</Td>
+            <Td>1</Td>
+            <Td>2</Td>
+            <Td>4</Td>
+        </Tr>
+        <Tr>
+            <Td>Attributo+0</Td>
+            <Td>1</Td>
+            <Td>2</Td>
+            <Td>4</Td>
+            <Td>8</Td>
+        </Tr>
+        <Tr>
+            <Td>Attributo+1</Td>
+            <Td>2</Td>
+            <Td>4</Td>
+            <Td>8</Td>
+            <Td>12</Td>
+        </Tr>
+        <Tr>
+            <Td>Attributo+2</Td>
+            <Td>4</Td>
+            <Td>8</Td>
+            <Td>12</Td>
+            <Td>16</Td>
+        </Tr>
+        <Tr>
+            <Td>Attributo+3</Td>
+            <Td>8</Td>
+            <Td>12</Td>
+            <Td>16</Td>
+            <Td>20</Td>
+        </Tr>
+        <Tr>
+            <Td>Attributo+4</Td>
+            <Td>12</Td>
+            <Td>16</Td>
+            <Td>20</Td>
+            <Td>24</Td>
+        </Tr>
+        <Tr>
+            <Td>Attributo+5</Td>
+            <Td>16</Td>
+            <Td>20</Td>
+            <Td>24</Td>
+            <Td>28</Td>
+        </Tr>
+        <Tr>
+            <Td>Extra+1</Td>
+            <Td>+4</Td>
+            <Td>+4</Td>
+            <Td>+4</Td>
+            <Td>+4</Td>
+        </Tr>
+    </Tbody>
+</Table>
+
+<CenterBlock>
+Se vogliamo comprare l’abilità pistole (media basata su destrezza) e abbiamo destrezza 10, possiamo spendere 1pt per averla a 9 (Destrezza -1), 2pt per averla a 10 (Destrezza), 4pt per averla a 11 (Destrezza +1) e così via seguendo la logica della tabella.\
+10 è considerata una competenza medio-scarsa che consente un successo nel 50% dei tiri, mentre 16 è una competenza assoluta che otterrà un successo nel 98% dei casi. Vedremo più avanti come funziona la risoluzione dei conflitti.\
+Le abilità possono essere particolari e specifiche o, in contesti più cinematografici e meno realistici, essere incluse in un’unica grande abilità.
+</CenterBlock>
+
+> GURPS permette di avere varie abilità scientifiche: Fisica, Matematica, Chimica, Biologia, etc. Ma permette di accorparle tutte sotto un’unica abilità chiamata “Scienza!” nel caso la abilità abbia rilevanza limitata o la campagna punti meno al realismo.
+
+### Vantaggi e svantaggi
+<CenterBlock>
+A definire peculiari caratteristiche del personaggio sono anche **i vantaggi e gli svantaggi**. Si tratta di un’ampia gamma di definizioni che coprono capacità fisiche (sensi affinati o menomazioni), mentali (fobie e manie) e di background (ricchezza e status): ogni vantaggio ha un costo, mentre uno svantaggio genera un ritorno di punti creazione. Il master può scegliere se vietarne alcuni o variarne il costo a seconda dell’ambientazione: in un contesto medievale l’alfabetismo è un vantaggio costoso, mentre in uno moderno lo si può dare di default e permettere l’acquisizione di uno svantaggio opposto; in una campagna politica un difetto come l’incapacità di mentire o un pregio come un’ingente disponibilità economica avranno un impatto (e quindi un costo) diverso che in una land ambientata su un campo di battaglia.
+</CenterBlock>
+
+### Tratti
+<CenterBlock>
+Oltre a questi si possono aggiungere fino a **cinque tratti** ossia caratteristiche che non danno né vantaggio né svantaggio ma caratterizzano il personaggio e garantiscono un punto l’uno. Ad esempio un personaggio può “Amare i luoghi alti” o essere un “Nerd”, ma nessuna di queste due cose lo rende particolarmente avvantaggiato o competente in una materia, ma nemmeno lo mette in svantaggio, semplicemente lo caratterizza ed impone un particolare registro di gioco (chi ama i luoghi alti non si tirerà indietro ad una scalata, un nerd non eviterà una maratona di Star Wars…).
+</CenterBlock>
+
+<ImageBlock>
+    <Image>![Pirate di Cristi Balanescu.](/images/sistemi-di-gioco/gurps-2.jpg 'Pirate di Cristi Balanescu.')</Image>
+    <ImageCaption>Pirate di [Cristi Balanescu](https://www.artstation.com/cristib).</ImageCaption>
+</ImageBlock>
+
+<Anchor id="progressione" />
+## Progressione del personaggio
+
+> Partendo da 10, che rappresenta la media per ogni attributo, ogni singolo punto al di sopra ha un costo pari a 10 pt per gli attributi Forza e Salute e di 20 pt per gli attributi Intelligenza e Destrezza, mentre scendere al di sotto della media fa guadagnare altrettanti punti man mano che si scende fino ad un minimo di 1 (che implica problemi fisici e/o intellettivi gravi).
+
+Ricapitolando, quindi: \
+\
+**Forza/Salute**\
+– 14 punti [costo 40]\
+– 13 punti [costo 30]\
+– 12 punti [costo 20]\
+– 11 punti [costo 10]\
+– 10 punti [costo 0]\
+– 9 punti [costo -10]\
+– 8 punti [costo -20]\
+\
+**Destrezza/Intelligenza**\
+– 14 punti [costo 80]\
+– 13 punti [costo 60]\
+– 12 punti [costo 40]\
+– 11 punti [costo 20]\
+– 10 punti [costo 0]\
+– 9 punti [costo -20]\
+– 8 punti [costo -40]
+
+>Non ci sono cap predefiniti né un massimale che si può spendere in attributi, ma 15 è da considerarsi il massimo raggiungibile da un umano in un’ambientazione realistica.
+
+Sulle statistiche si basano di fatto le abilità. Gli attributi secondari sono acquistabili secondo questo schema:\
+\
+✑ Punti ferita +/- 2 pt per punto;\
+✑ Volontà +/- 5 per punto;\
+✑ Punti fatica +/- 3 per punto;\
+✑ Velocità base +/- 5 per 0.25 velocità;\
+✑ Movimento base +/-5 per 1 metro al secondo;\
+✑ Percezione +/- 5 pt per punto.
+
+> Come gli attributi, le abilità non hanno un cap, ma per amor di realismo è bene considerare che **16 è la competenza indiscutibile di un professore pluri-dottorato** in quel campo o di un atleta olimpionico, mentre punteggi tra 18 e 20 rappresentano il livello di precisione che solo un’entità millenaria o una macchina progettata per uno specifico scopo può raggiungere – comunque personaggi più cinematografici che realistici.
+
+<Anchor id="meccaniche" />
+## Meccaniche di gioco
+>La risoluzione delle azioni avviene tramite il lancio di **tre dadi a sei facce**. Il successo di un’azione avviene quando la somma dei dadi ha un valore **pari o inferiore a quello dell’attributo/abilità** che viene testata. Di consenguenza, maggiore è il valore dell’attributo/abilità, maggiore è la probabilità di riuscita.
+
+Il master può concedere bonus o malus a seconda dei tratti del personaggio o della situazione, da aggiungersi o sottrarsi al valore dell’abilità: un diplomatico che va in un territorio ostile avrà comunque diplomazia 16, ma se dovesse tenere un discorso agli abitanti del posto per convincerli di un commercio potrebbe ottenere un malus (esempio -3) e dover tentare una prova di diplomazia partendo da 13.\
+Un tiro è considerato **successo critico** (quindi particolarmente eccezionale o eroico) se si ottiene 3 o 4: se l’abilità è di almeno 15 è critico anche 5, se l’abilità è 16 o più è critico anche 6.\
+Un 18 è invece considerato sempre un **fallimento critico** (quindi un risultato pessimo e/o dannoso); è fallimento critico anche un 17 con un’abilità di 15 o meno. Si considera fallimento critico un risultato pari o superiore al valore dell’abilità +10.\
+Fallimenti e successi critici sono rari ma controbilanciano l’esito di chi è estremamente scarso o estremamente competente in un’abilità.\
+L’utilizzo della somma di tre dadi dà origine ad una distribuzione di probabilità di risultati di tipo bernoulliano, andando a formare una campana (la curva di Gauss): **i tiri compresi nella media (tra 9 e 12) sono estremamente più probabili che quelli agli estremi**, questo perché esiste una sola combinazione per fare 3 o 18 (tutti 1 o 6) e ne esistono molte di più per i valori nel mezzo.
+
+<ImageBlock>
+    <Image>![Bernulli](/images/sistemi-di-gioco/gurps-3.png 'Bernulli')</Image>
+</ImageBlock>
+
+Nello schema vedete dalle colonne blu la probabilità che lanciando 3d6 si ottenga un determinato risultato (scala numerica di sinistra) mentre dalla linea rossa vedete la probabilità di riuscita di un tiro che ha il medesimo valore (scala numerica di destra).\
+La probabilità di riuscita è pari alla sommatoria di tutte le probabilità di uscita dei numeri compresi da 3 a quel valore. Di fatto un tiro di un’abilità a 10 ha il 50% di riuscita, una al 14 ha il 90% mentre una al 7 il 15%.\
+Un personaggio con 14 in una abilità è quindi un personaggio estremamente competente e l’aumento della stessa di un ulteriore punto comporta il bonus di appena il 2% di riuscita in più; accrescendo l’abilità il beneficio diminuisce ulteriormente, tanto che fra 17 e 18 lo scarto è di appena il 0.5%.\
+Un tiro al 18 ha come unica possibilità di fallire un fallimento critico, che ha la possibilità di accadere di appena lo 0.5%. Se si vuole puntare ad un gioco realistico è quindi importante riuscire a bilanciare attributi/abilità in modo che non venga superata una certa soglia e/o valutare un’ampia gamma di malus/bonus situazionali.
+
+> La curva di Gauss è tuttavia una distribuzione realistica di probabilità e rende evidente come il fallimento di un’impresa da parte di personaggi molto competenti sia esclusivamente questione di sfortuna (o al contrario: la concretizzazione della fortuna del principiante, assai rara ma possibile).
+
+Un’altra caratteristica importante è il “minimo” di un’abilità, ossia il tiro che è possibile fare al posto della abilità nel caso il personaggio non l’abbia in scheda. \
+Alcune abilità possono non avere un minimo e non possono essere lanciate senza avere la abilità apposita: tutte le abilità “molto difficili” non hanno un minimo.
+
+### Esempio
+<CenterBlock>
+L’abilità “Coltelli” ha come minimi DX-5 e Spade Corte -3. Il che significa che se PG X non ha speso punti in coltelli potrà comunque attaccare con l’arma usando come valore di successo del tiro o la propria Destrezza diminuita di cinque (DX-5) o, se lo ha, il tiro di spade corte diminuito di tre (Spade Corte -3), prendendo il maggiore tra i due. Abilità simili hanno penalità di “sostituzione” minori mentre gli attributi hanno penalizzazioni che dipendono dalla difficoltà dell’abilità (Facili: AT-4. Medie: AT-5. Difficili: AT-6)
+</CenterBlock>
+
+<Anchor id="distribuzione-probabilita" />
+## Distribuzione delle probabilità
+<ImageBlock>
+    <Image>![Grafico interattivo](/images/sistemi-di-gioco/gurps-4.png 'Grafico interattivo')</Image>
+    <ImageCaption>CLICCA [QUI](https://www.artstation.com/stefankoidl) PER IL GRAFICO INTERATTIVO</ImageCaption>
+</ImageBlock>
+Il grafico riporta la quantità di successi o fallimenti in 50 tiri con un abilità/attributo a 10. La quantità di successi è appena superiore alla metà. È quindi altrettanto probabile ottenere più fallimenti che successi essendo la probabilità di riuscita prossima al 50%. Come già detto, **GURPS favorisce particolarmente i personaggi specializzati in determinati ambiti** lasciando al caso il successo di chi si improvvisa in un ruolo o non diventa particolarmente competente.
+
+<Anchor id="conflitti" />
+## Conflitti
+> Le regole dei combattimenti in GURPS possono raggiungere livelli di dettaglio particolarmente elevato adatto a giochi di tipo strategico più che di ruolo, e alcuni supplementi aggiungono manovre di combattimento che rendono il gioco più cinematografico o realistico a seconda delle esigenze.
+
+<ImageBlock>
+    <Image>![Tracker di Eytan Zana.](/images/sistemi-di-gioco/gurps-5.jpg 'Tracker di Eytan Zana.')</Image>
+    <ImageCaption>Tracker di [Eytan Zana](https://www.artstation.com/eytan).</ImageCaption>
+</ImageBlock>
+
+Descriveremo qui solo il **sistema base**. \
+\
+L’iniziativa è decisa in base alla **velocità** (chi è più in alto agisce per primo); a pari velocità si può spareggiare o lasciare la decisione al master. Se il combattimento è innescato da qualcuno il giro comincia da lui. Ogni turno un giocatore decide una manovra, ossia un determinato tipo di azione che può svolgere in quel turno: \
+\
+✑ <ins>Inattività</ins>: Solitamente una manovra “imposta” da condizioni di stordimento o se il combattimento parte da qualcuno con velocità inferiore. Non si può fare nulla se non tentare di riprendersi dallo stordimento, o azioni gratuite.\
+✑ <ins>Movimento</ins>: Il personaggio può muoversi fino ad una distanza pari al proprio valore di movimento in metri.\
+✑ <ins>Cambio postura</ins>: Permette di cambiare la propria postura in una qualsiasi tra: eretto, carponi, seduto, inginocchiato, prono e sdraiato. Le posture alterano la grandezza del proprio bersaglio (rendendo più facile/difficile essere colpiti), il proprio movimento e la capacità di attacco/difesa.\
+✑ <ins>Mirare</ins>: Mirare con un’arma a distanza a un bersaglio che si riesce a vedere. Permette di aggiungere il valore di accuratezza dell’arma al tiro per colpire (di cui parleremo meglio nel paragrafo Equipaggiamento). Turni di mira addizionali garantiscono un bonus maggiore.\
+✑ <ins>Attaccare</ins>: Effettuare un attacco con o senza armi, in mischia come a distanza. (Diremo di qui a breve.)\
+✑ <ins>Attacco Totale</ins>: Particolare manovra che permette di concentrarsi sull’attacco e tralasciare la difesa. Con un’arma a distanza garantisce un bonus di +1. Con armi da mischia si può scegliere fra tre opzioni:\
+– <ins>Attacco Forte</ins>: Tiro per colpire normale. Se si colpisce si ottiene +2 ai danni o +1 per ogni dado lanciato (prendere il risultato migliore);\
+– <ins>Attacco Determinato</ins>: Un unico attacco a +4 per colpire.\
+– <ins>Attacco Doppio</ins>: Se si impugnano due armi o un’arma che può essere usata più volte si può eseguire un doppio attacco nello stesso turno. L’arma impugnata con la mano non principale ha un malus di -4 a colpire (salvo vantaggio ambidestria).\
+✑ <ins>Muoversi ed Attaccare</ins>: Ci si muove come per la manovra Movimento e si esegue un attacco poco mirato con un tiro -4 a colpire. Se a distanza si perdono i bonus di Mirare. Se in corpo a corpo, il tiro per colpire può essere al massimo 9.\
+✑ <ins>Difesa Totale</ins>: Permette di concentrarsi sulla difesa senza effettuare un attacco. Si hanno due opzioni:\
+– <ins>Difesa Migliorata</ins>: Si aggiunge +2 ai tiri per una specifica difesa attiva: schivare, bloccare o parare. (v. Risolvere Difesa)\
+– <ins>Difesa Doppia</ins>: Si può eseguire un secondo tentativo di difesa attiva contro uno specifico attacco ma con un tipo di difesa diversa (Ad esempio, in caso di mancata parata si può tentare di schivare)\
+✑ <ins>Concentrarsi</ins>: Tipicamente tutte le azioni che richiedono prove mentali (Incantesimi, prove sociali o di conoscenza durante il combattimento) richiedono uno o più turni di questa manovra. Se si viene distratti in qualche modo (attacco, ferimento, rumori forti o interferenze) occorre un tiro di Volontà -3 per mantenere la concentrazione.\
+✑ <ins>Preparazione</ins>: Tutto quel che riguarda preparare un’arma all’attacco o un oggetto al proprio uso: estrarre o ricaricare un’arma, indossare uno scudo o un’armatura.\
+\
+Una volta che tutti hanno deciso come svolgere un turno si passa alla fase pratica, e si risolvono le azioni in ordine di turni.
+
+### Risolvere un attacco
+<CenterBlock>
+Si effettua il tiro per colpire. Se il tiro ha successo e l’avversario è cosciente di essere attaccato può eseguire una manovra di difesa attiva tra schivata, blocco (scudo) e parata (corpo a corpo): la riuscita del tiro comporta la completa difesa dall’attacco, in caso contrario viene colpito e l’attaccante tira per i danni. In caso il tiro per colpire sia un critico, l’avversario non ha possibilità di difesa e, nel caso si tratti di un 3 (fallimento critico), accusa il massimo dei danni possibili.
+</CenterBlock>
+
+### Risolvere una difesa
+<CenterBlock>
+Nel caso di armi a distanza è sempre possibile schivare, il blocco è possibile ma da definire (una freccia può essere parata da uno scudo di legno o metallo, un proiettile potrebbe perforarlo) mentre la parata è possibile solo in corpo a corpo (non si para il proiettile ma si usa l’arma o le mani per disturbare l’attacco e deviarlo prima che l’arma faccia fuoco), parare a mani nude un attacco con armi da mischia è possibile solo in determinate condizioni (si utilizza un arte marziale specifica o si hanno adeguate protezioni agli arti superiori).\
+Il tiro per la **schivata** è pari a velocità base + 3.\
+Il tiro per il **blocco** è pari a 3 + (Tiro Scudo/2) arrotondato per difetto. Esempio se il tiro per scudi è 11 allora si avrà un tiro di blocco pari a 3 + (11/2) = 8.5 = 8\
+Il tiro per la **parata** è pari a 3 + (Tiro Arma/2) arrotondato per difetto. Esempio analogo al caso di blocco.\
+**Si può eseguire una singola difesa per tipo in un turno**: una parata, una schivata ed un blocco.
+</CenterBlock>
+
+### Magia
+<CenterBlock>
+La magia non è contemplata dal manuale base di GURPS, sono necessari complementi appositi che spieghino l’utilizzo e i limiti secondo l’ambientazione (fantasy, steampunk, supereroi…). Generalmente ogni incantesimo è considerata un’abilità mentale a parte che oscilla di difficoltà fra il difficile ed il molto difficile, priva di tiro minimo. Ogni incantesimo consuma mana che può essere associato ai punti fatica del personaggio o essere una caratteristica a sé stante.
+</CenterBlock>
+
+### Scontri sociali
+<CenterBlock>
+L’aspetto degli scontri sociali in GURPS non è particolarmente ben sviluppato. I PNG possono avere opinioni specifiche sul pg a seconda di determinati fattori come status sociale, aspetto fisico e ricchezza: il gioco permette di rendere questa opinione randomica tramite il lancio di 3d6. A prescindere da questo in genere tentare di portare una persona o più persone ad ascoltare la propria campana anziché l’altra è una prova contrapposta.
+</CenterBlock>
+
+<Anchor id="guarigione" />
+## Guarigione
+Le ferite hanno ovviamente effetti negativi sul personaggio e sulle sue azioni. I punti ferita iniziali sono **pari al punteggio di forza** (possono essere acquistati con i punti personaggio) e calano man mano che si subiscono ferite (attacchi, trappole, incidenti…).\
+\
+Supponendo di avere un personaggio con una forza nella media si hanno 10 punti ferita. Quando si subiscono danni che portano il personaggio ad un terzo di punti ferita (3 nel nostro caso) il personaggio è **indebolito** e dimezza (per eccesso) i valori di schivata e movimento. Quando il personaggio arriva a 0 o negativo non muore, ma è a rischio di svenimento, effettua un tiro su Salute all’inizio del suo turno (con una penalità di -1 per ogni multiplo della salute raggiunto in negativo, nell’esempio si ha -1 a -10, -2 a -20…): in caso di fallimento sviene, altrimenti può agire normalmente ma deve effettuare il tiro anche nel turno successivo. Nel caso decida di rimanere fermo e non compiere azioni (neanche difesa) allora può evitare di tirare e rimanere cosciente. Arrivato all’esatto valore negativo dei propri punti ferita (-10 nell’esempio) il personaggio rischia di morire, oltre al tiro per rimanere cosciente di prima deve tentare un tiro di salute e in caso di fallimento morire definitivamente.\
+\
+Il tiro non va fatto ad ogni turno, ma ogni volta che si raggiunge un multiplo del punteggio di salute (nell’esempio -10, -20, -30…) questo fino al multiplo di 5 (nell’esempio -50): in quel caso il personaggio muore senza tirare oltre.\
+\
+Le ferite causano anche dolore: quando si subisce una ferita **si subisce una penalità a Intelligenza e Destrezza** pari ai punti ferita persi (massimo -4) solo nel turno corrente. Quando un personaggio subisce in un colpo solo più della metà dei suoi punti ferita subisce una ferita mortale e deve tirare su Salute: in caso di fallimento cade a terra e lascia l’arma, in caso di fallimento critico sviene.\
+\
+Guarire richiede tempo e cure specifiche: situazioni critiche come lacerazioni e ferite mortali richiedono l’uso di abilità apposite come pronto soccorso o chirurgia per poter iniziare a guarire normalmente. Ogni giorno un personaggio può recuperare un punto salute se supera un tiro di Costituzione, ma l’utilizzo di abilità mediche permette di solito di recuperare punti ferita a seconda del livello tecnologico (1d6-3 per ambientazioni pre-medioevo, 1d6-2 per le medievali, 1d6 per quelle moderne, 1d6+1 per le futuristiche), in caso si ottenga 0 o meno si guarisce comunque almeno di 1.
+
+<Anchor id="equipaggiamento" />
+## Equipaggiamento
+Il personaggio può portare con sé oggetti fino al proprio Sollevamento Base (SB), una caratteristica che vale (Forza2)/10 kg, arrotondato per il numero più prossimo (16,2 diventa 16kg, 10,7 diventa 11kg). Nel caso di un personaggio con Forza media 10 si ha 10×10/10 = 10Kg. \
+\
+✑ Finché viene trasportato peso fino al SB non si hanno penalità.\
+✑ Da oltre SB al doppio del SB si ha Movimento ridotto all’80% (Movimentox0.8) e -1 alla schivata. Ingombro Leggero.\
+✑ Da SBx2 a SBx3 si ha Movimento al 60% (Movimentox0.6) schivata -2. Ingombro Moderato.\
+✑ Da SBx3 a SBx4 si ha Movimento a 40% (Movimentox0.4) schivata -3. Ingombro Pesante.\
+✑ Da SBx4 in poi si ha Movimento a 20% (Movimentox0.2) schivata -4. Ingombro molto pesante.\
+\
+Si arrotonda sempre per difetto, nessun ingombro porta schivata o movimento al di sotto di 1.\
+Le armature sono caratterizzate da un valore di Resistenza Danno che riduce i danni prima che il personaggio li subisca, anche a zero. Una cotta di maglia ha RD 4, un giubbotto antiproiettile ha 7.\
+\
+Nel PDF del manuale lite, che troverete linkato in fondo, sono presenti varie armi. Elencarle qui sarebbe inutile, per cui ci limitiamo a sintetizzarne le caratteristiche.\
+\
+Le armi sono caratterizzate da:\
+\
+✑ <ins>Danno</ins>: In caso di armi da fuoco il danno è specifico dell’arma. In caso di armi da mischia (ed alcune armi da tiro) il danno deriva dalla forza del personaggio e dal tipo di attacco (Fendente ed Affondo, v. sopra) ed aggiungono bonus al danno. Oltre a questo solitamente è presente una lettera che indica il tipo di danno (P=perforante, T=Tagliente, F=Fuoco…)\
+✑ <ins>Accuratezza</ins>: Per armi a distanza. E’ un bonus che va aggiunto al tiro per colpire se si è scelto di mirare nel turno precedente.\
+✑ <ins>Forza</ins>: La forza base necessaria per manovrare l’arma. Nel caso sia superiore alla forza posseduta si ha una penalità pari alla differenza fra le due forze e si spenderanno punti fatica addizionali per sferrare un attacco.\
+✑ <ins>Gittata</ins>: Per armi a distanza. Se è indicata da sola indica la gittata massima, ossia il limite oltre il quale non è possibile colpire un bersaglio. Se sono due separate da una slash, la seconda è la massima, la prima è la distanza oltre la quale il danno dell’arma va dimezzato. Armi da lancio e archi hanno gittate che dipendono dalla forza del personaggio.\
+✑ <ins>Cadenza di Fuoco</ins> (CdF). Armi a gittata: Il numero di colpi che è possibile sparare in un turno. Attenzione: quando si spara un numero di colpi superiore ad uno e contenuto dentro la cadenza di fuoco non si tira per ogni singolo colpo ma una volta sola, il margine di successo indica il numero di colpi andati a segno (Esempio se ho 10 nel tiro per colpire e ottengo 10, un solo colpo va a segno; se ottengo 9 colpisco con due colpi e così via, fino al massimo di colpi che ho sparato).\
+✑ <ins>Colpi</ins>. Armi a gittata: La capienza del caricatore dell’arma, quindi il numero di colpi che è possibile sparare prima di dover ricaricare l’arma. Generalmente ricaricare l’arma richiede un turno ma alcune armi richiedono più tempo.
+
+<Anchor id="simulazione-combattimento" />
+## Simulazione di combattimento
+Tizio armato di pistola spara verso Caio che, armato di spada, è in rapido avvicinamento.\
+All’inizio del turno quindi Tizio ha scelto una '**manovra di attacco**' mentre Caio, troppo distante, ha optato per il **movimento**.\
+\
+Tizio ha un abilità in pistole di 14, non ha mirato nel turno precedente e non ha diritto al bonus di accuratezza, ma non ha scelto di muoversi quindi non ha neanche una penalità da movimento, e la sua Beretta ha una **cadenza di fuoco** di 3, che gli permette di sparare 3 volte in un turno. Fa quindi tre tiri ottenendo 13. Due colpi vanno a segno e Caio, che ha scelto movimento anziché difesa non ha bonus ed essendo ancora distante e sprovvisto di scudo può tentare solo una **schivata**: al tiro ottiene 10 che è superiore al suo tiro per schivare (8), entrambi i colpi lo prendono! La beretta infligge 2d6+2 danni, Tizio ottiene quindi 8 e 7 danni che colpiscono Caio, ma questi indossa un giubbotto antiproiettile che con la sua RD 7 riduce i danni del primo colpo a 1 e assorbe completamente il secondo. Caio perde 1 punto ferita, cosa che gli causa un malus -1 alle prossime azioni e nulla più.\
+\
+Tizio e Caio sono ora a corto raggio e decidono le loro azioni, Tizio opta ancora per sparare a Caio, ma stavolta allontanandosi. Usa quindi **Movimento e Attacco**, mentre Caio usa **Attacco Totale** perché vuole attaccare due volte.\
+Tizio spara ancora tre volte, ma stavolta ha -4 a sparare (10); ottiene 10, mancando due colpi e colpendo soltanto con uno. Infligge soltanto tre danni che, ovviamente, vengono annullati dal giubbotto di Caio.\
+\
+Caio esegue due attacchi con la spada, nella quale ha un’abilità di 15: tirando ottiene 9 al primo attacco (**successo**) e 3 al secondo (**successo critico!**). Il secondo attacco va quindi a segno di default, ma Tizio può ancora difendersi dal primo, che sceglie di schivare: tirando ottiene 5, che è inferiore al suo tiro per schivare. Evita quindi completamente l’attacco, ma il secondo, violento, lo prende senza possibilità di difesa con il massimo dei danni. Caio ha forza 12 che causa 2d6-2 danni da fendenti e la spada aggiunge +1. I danni massimi ottenibili sono 11 e Tizio, che ha 10 punti ferita, subisce una ferita mortale, tira quindi su costituzione (11) per rimanere cosciente… e fallisce, finendo a terra svenuto alla mercé del suo assalitore.
+
+<Anchor id="accorgimenti" />
+## Accorgimenti
+> Essendo un sistema strutturato su una specifica logica è importante definire cosa si voglia ottenere e plasmare le meccaniche del gioco attorno a quello che deve essere il nocciolo duro. GURPS è un sistema forse troppo realistico per quel che riguarda il combattimento come potete vedere dalla simulazione, e richiede una quantità non esigua di tiri di dado, ma è possibile limare questa caratteristica delimitando **cosa è necessario tirare e cosa no**.
+
+Per esempio, è possibile definire un sistema di turnazione ed iniziativa che permetta di invertire le parti, dando ad entrambi un pari vantaggio, oppure un sistema di danni predefinito che impedisca di dover tirare ogni volta.\
+La community di GURPS è molto ricca e attiva e nelle pieghe di internet si trovano molte idee facilmente riutilizzabili, seppur buona parte della fruizione richieda una discreta conoscenza della lingua inglese.\
+A titolo esemplificativo, segnaliamo un riadattamento fan made per ambientazioni stile [Fallout](http://gurps.fallout.free.fr/data/GURPS_Fallout_compilation.pdf).\
+\
+Un altro consiglio che ci sentiamo di darvi è quello di non utilizzare GURPS se non avete a disposizione un programmatore che vi consenta di automatizzare il più possibile non solo il tiro dei dadi, ma anche la costruzione della scheda del personaggio. È infatti proprio nella fase iniziale che il giocatore avrà bisogno di essere tenuto il più possibile per mano.
+
+<ShoppingTips>Scarica [GURPS LITE](http://www.warehouse23.com/products/gurps-lite-italian-fourth-edition) (GRATIS! – ITA)</ShoppingTips>
+<ShoppingTips>Scarica [GURPS LITE](http://www.sjgames.com/gurps/lite/) (GRATIS! – ENG)</ShoppingTips>
+<ShoppingTips>Acquista su [Amazon](https://www.amazon.it/Gurps-Basic-Set-Steve-Jackson/dp/1556347294/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3A143PR78NZZ1&dchild=1&keywords=gurps+basic+set&qid=1589106452&sprefix=GUrps%2Caps%2C183&sr=8-1) (ENG)</ShoppingTips>
+<ShoppingTips>Acquista su [SJGames](http://www.sjgames.com/gurps/books/Basic/) (ENG)</ShoppingTips>

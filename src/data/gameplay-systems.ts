@@ -16,4 +16,8 @@ export const gameplaySystems: GameplaySystem[] = [
         name: 'd20 system',
         url: 'd20-system',
     },
+    {
+        name: 'GURPS',
+        url: 'gurps',
+    },
 ]
