@@ -40,6 +40,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         img: ({ src, alt, title }: { src: string; alt: string; title: string }) => (
             <Image src={src} alt={alt} title={title} width={512} height={342} />
         ),
+        hr: () => <hr className="my-8 border-t-2 border-[#094f56]" />,
 
         /**
          * Custom components
@@ -87,6 +88,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 </p>
             </h3>
         ),
+
+        // OpenD6
+        OpenD6Strength: ({ children }: { children: React.ReactNode }) => <span className="text-[#cc4a48]">{children}</span>,
+        OpenD6Agility: ({ children }: { children: React.ReactNode }) => <span className="text-[#588c73]">{children}</span>,
+        OpenD6Intelligence: ({ children }: { children: React.ReactNode }) => (
+            <span className="text-[#3282a6]">{children}</span>
+        ),
+        OpenD6Charisma: ({ children }: { children: React.ReactNode }) => <span className="text-[#88578b]">{children}</span>,
 
         //
         ...components,
