@@ -24,4 +24,8 @@ export const gameplaySystems: GameplaySystem[] = [
         name: 'Interlock',
         url: 'interlock',
     },
+    {
+        name: 'OpenD6',
+        url: 'opend6',
+    },
 ]
