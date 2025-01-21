@@ -1,5 +1,47 @@
 # Interlock
 
+<TableOfContent
+    ids={[
+        {
+            id: "intro",
+            title: "Introduzione"
+        },
+        {
+            id: "punti-forti-deboli",
+            title: "Punti di forza e debolezza"
+        },
+        {
+            id: "creazione",
+            title: "Creazione del personaggio"
+        },
+        {
+            id: "progressione",
+            title: "Progressione del personaggio"
+        },
+        {
+            id: "meccaniche",
+            title: "Meccaniche di gioco"
+        },
+        {
+            id: "distribuzione-probabilità",
+            title: "Distribuzione delle probabilità"
+        },
+        {
+            id: "conflitti",
+            title: "Conflitti"
+        },
+        {
+            id: "danni",
+            title: "Danni"
+        },
+        {
+            id: "accorgimenti",
+            title: "Accorgimenti"
+        }
+    ]}
+/>
+
+<Anchor id="intro" />
 ## Introduzione
 Interlock è noto per essere il sistema nativo di Cyberpunk 2020 e sue reincarnazioni, edite tutte da TSR, e nel passato più recente per l’adattamento di The Witcher RPG. A prima vista potrebbe sembrare che ben si adatti sia a situazioni futuristiche che ad ambientazioni low magic fantasy. Prendendo la lente d’ingrandimento, mentre per i primi l’adattamento è molto facile (combattimenti veloci e letali, un sistema di gestione della psicopatia che può essere rivenduta anche nell’horror, un buon sistema di reputazione e scontro verbale/sociale), quando si adatta alla seconda mostra dei limiti nella gestione di tutto quello che non è la vita ordinaria, ovvero la magia, oltre a un sistema di abilità che appiattisce il gioco. Per questo ci sentiamo di consigliarlo prevalentemente, e con minor sforzo di soluzioni, in land moderne/futuribili.
 
@@ -8,6 +50,7 @@ Interlock è noto per essere il sistema nativo di Cyberpunk 2020 e sue reincarna
     <ImageCaption>Illustrazione di Syd Mead per BladeRunner2019.</ImageCaption>
 </ImageBlock>
 
+<Anchor id="punti-forti-deboli" />
 ### Punti di forza
 <CenterBlock>
 ✑ La creazione del personaggio è relativamente semplice: vanno assegnati punti alle caratteristiche e alle abilità in modo lineare, facile sia l’implementazione dal punto di vista tecnico che dal punto di vista concettuale.\
@@ -25,6 +68,7 @@ Interlock è noto per essere il sistema nativo di Cyberpunk 2020 e sue reincarna
 </CenterBlock>
 >Una nota a parte sul gioco informatico: per quanto ben fatto e anche accattivante a una prima lettura, è di fatto un minigame interno, con meccaniche diverse e un set di regole che sono simili a quelle del gioco fuori dalla rete, ma profondamente diverse nell’implementazione. Usare il sistema informatico così come è pensato significa creare due giochi paralleli, uno dentro e uno fuori dalla rete, e tutti sappiamo che frammentare il gioco non piace. Per questo ci sentiamo di consigliare di semplificare il gioco di rete, a meno di non voler concentrare il focus del vostro gioco proprio su di esso (in quel caso, il consiglio è di semplificare il gioco fuori dalla rete).
 
+<Anchor id="creazione" />
 ## Creazione del personaggio
 Il sistema nativo di Cyberpunk2020 di cui tratteremo qui (The Witcher RPG è leggermente diverso, avendo anche delle caratteristiche e delle abilità che tengono conto di un contesto fantasy permeato di magia) prevede <ins>9 caratteristiche e più di 50 abilità</ins>.
 
@@ -52,11 +96,13 @@ Il manuale di CP2020 offre anche un interessante sistema di creazione automatica
     <ImageCaption>Aleph di leadheavy.</ImageCaption>
 </ImageBlock>
 
+<Anchor id="progressione" />
 ## Progressione del personaggio
 Per far progredire il personaggio si usano i **Punti Esperienza** (PX). Il manuale suggerisce di dare PX nelle abilità utilizzate in gioco: se sparate otterrete dei PX nella vostra abilità sparare. Questo sistema è complesso da gestire già al tavolo, per cui in un PbC sarebbe più funzionale assegnare dei punti che possano essere spesi su tutta la scheda. Nel caso questa grande libertà non vi piaccia, potete supervisionare gli avanzamenti nelle schede e chiedere di giustificare come il PG ha imparato o migliorato un’abilità che non ha mai usato.\
 \
 Dal punto di vista meccanico la spesa dei PX è semplice: per aumentare un’abilità serviranno un numero di PX pari al valore attuale dell’abilità: se avete Informatica a un valore di 5 dovrete spendere 5 PX per portarla a 6. Alcune abilità (indicate nel manuale e nella scheda) sono considerate complesse e avranno un fattore moltiplicativo: ad esempio, se volete aumentare la vostra abilità di cybertecnologia (che è considerata complessa e ha (2) come fattore moltiplicativo) serviranno 10 PX per passare da 5 a 6.
 
+<Anchor id="meccaniche" />
 ## Meccaniche di gioco
 Per tutti i tiri delle abilità si usa un solo dado: il d10. Ogni tiro di abilità è risolto con un tiro composto dal **valore della abilità+valore della caratteristica associata+1d10**. Con un risultato di 10 sul dado si dovrà tirare un nuovo d10 (questa volta a sé stante) e sommare il risultato al tiro precedente: se si ottiene nuovamente un 10 si ripete l’operazione fino a che il dado non darà un risultato differente. Un risultato di 1 sul d10, invece, costituisce sempre un fallimento (o, se volete usare anche questa meccanica, un fallimento critico) indipendentemente dalla somma di abilità e caratteristica.\
 \
@@ -79,6 +125,7 @@ Ci possono anche essere casi che richiedono **tiri contrapposti**: ad esempio Me
     <ImageCaption>Infestation (War Z) di [Andrey Denisov](https://www.deviantart.com/andreydenisov/art/infestation-War-z-381303520).</ImageCaption>
 </ImageBlock>
 
+<Anchor id="distribuzione-probabilita" />
 ## Distribuzione delle probabilità
 <ImageBlock>
     <Image>![Grafico interattivo](/images/sistemi-di-gioco/interlock-4.png 'Grafico interattivo')</Image>
@@ -86,6 +133,7 @@ Ci possono anche essere casi che richiedono **tiri contrapposti**: ad esempio Me
 </ImageBlock>
 In figura è rappresentato l’esito di 50 tiri nel caso di una abilita’ a valore 5 e una caratteristica associata di valore 6. Data la **natura uniforme della probabilità di ottenere qualsiasi valore sul d10**, i risultati sono equamente distribuiti tra 12 e 21. Ciò significa che se ad esempio vi confrontate con una difficoltà di 15 riuscirete in media il 60% delle volte, e fallirete in media il 40%. Seguendo il link potrete sperimentare con diversi valori di caratteristica e abilità per convincervi voi stessi della semplicità del sistema!
 
+<Anchor id="conflitti" />
 ## Conflitti
 Il combattimento in Interlock è veloce, facile, e letale. Si divide in due fasi: **il tiro di Iniziativa** e **la risoluzione del round**. \
 \
@@ -95,6 +143,7 @@ L’**Iniziativa** viene tirata da tutti i personaggi coinvolti con un tiro di <
 \
 **In corpo a corpo** invece il colpo ha sempre una CD 15, che può essere modificato nel caso l’avversario provi a parare o schivare: ad esempio, se il PG A prova a colpire il PG B che non effettua parate o schivate, la difficoltà sarà 15. Se invece PG B compie una parata, il colpo di A avrà la CD di un tiro per colpire del PG B (posto che questi abbia un’arma adatta a parare); nel caso in cui PG B tenti una schivata, la CD del colpo di PG A sarà il risultato del tiro di Schivata di PG B.
 
+<Anchor id="danni" />
 ## Danni
 Se il bersaglio viene colpito si tira un d10 per individuare la locazione in cui è stato colpito secondo il seguente schema: <ins>**1 testa**, 2-4 corpo, 5 braccio destro, 6 braccio sinistro, 7-8 gamba destra, 9-10 gamba sinistra</ins>.\
 \
@@ -116,6 +165,7 @@ Una volta subiti dei danni il PG potrebbe svenire a causa dello shock: più dann
 </CenterBlock>
 >**Nota**: il tiro per resistere allo svenimento (e alla morte) dovrà essere ripetuto ad ogni turno di gioco fino a che non verrete stabilizzati (con un tiro Pronto Soccorso con CD media per le ferite non mortali, CD complessa per quelle mortali).
 
+<Anchor id="accorgimenti" />
 ## Accorgimenti
 Il sistema Interlock è molto semplice dal punto di vista meccanico: si tratta solo di sommare abilità, una caratteristica associata ad essa (con la semplificazione che ogni abilità è legata a una sola caratteristica) e quindi sommare il risultato di un dado a 10 facce. Questo fa sì che l’implementazione meccanica sia molto semplice.\
 D’altra parte, la versione originale ha molte abilità (sia nel caso fantascientifico di Cyberpunk2020, sia nel caso fantasy di The Witcher RPG).\
