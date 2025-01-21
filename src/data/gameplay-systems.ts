@@ -20,4 +20,8 @@ export const gameplaySystems: GameplaySystem[] = [
         name: 'GURPS',
         url: 'gurps',
     },
+    {
+        name: 'Interlock',
+        url: 'interlock',
+    },
 ]
