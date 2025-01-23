@@ -32,4 +32,8 @@ export const gameplaySystems: GameplaySystem[] = [
         name: 'SIFRP',
         url: 'sifrp',
     },
+    {
+        name: 'Storyteller System',
+        url: 'storyteller-system',
+    },
 ]
