@@ -28,4 +28,8 @@ export const gameplaySystems: GameplaySystem[] = [
         name: 'OpenD6',
         url: 'opend6',
     },
+    {
+        name: 'SIFRP',
+        url: 'sifrp',
+    },
 ]
