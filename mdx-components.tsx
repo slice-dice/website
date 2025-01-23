@@ -1,6 +1,7 @@
 import type { MDXComponents } from 'mdx/types'
 import Image from 'next/image'
 import { Anchor, TableOfContent, TableOfContentId } from '@/components/table-of-content'
+import Link from 'next/link'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
@@ -45,6 +46,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         /**
          * Custom components
          */
+        Link: ({ href, children }: { href: string; children: React.ReactNode }) => (
+            <Link href={href} className="text-[#CC4A49] underline hover:no-underline">
+                {children}
+            </Link>
+        ),
         // Table
         Table: ({ children }: { children: React.ReactNode }) => (
             <div className="mb-4 overflow-x-auto pb-6">
