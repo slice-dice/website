@@ -1,4 +1,4 @@
-import { BookText, CircleHelp, Home } from 'lucide-react'
+import { BookText, CircleHelp, Home, LineChart } from 'lucide-react'
 
 import { ReactElement } from 'react'
 import { NavbarLink } from './navbar-link'
@@ -35,7 +35,7 @@ export const Navbar = (): ReactElement => {
                     </NavbarDropdown>
                     <NavbarDropdown>
                         <NavbarDropdownTrigger>
-                            <BookText size={22} />
+                            <LineChart size={22} />
                             Grafici Interattivi
                         </NavbarDropdownTrigger>
                         <NavbarDropdownMenu>
