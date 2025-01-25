@@ -1,9 +1,6 @@
-interface GameplaySystem {
-    name: string
-    url: string
-}
+import { SubRoute } from './routes'
 
-export const gameplaySystems: GameplaySystem[] = [
+export const gameplaySystems: SubRoute[] = [
     {
         name: 'Basic Role Playing',
         url: 'basic-role-playing',

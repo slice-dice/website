@@ -1,6 +1,6 @@
 'use client'
 
-import { BookText, CircleHelp, HomeIcon, LineChart, List, MenuIcon, X } from 'lucide-react'
+import { MenuIcon, X } from 'lucide-react'
 import { createContext, ReactElement, ReactNode, useContext, useState } from 'react'
 import {
     NavMenuAccordion,
@@ -9,8 +9,8 @@ import {
     NavMenuAccordionTrigger,
     NavMenuLink,
 } from './nav-menu-link'
-import { gameplaySystems } from '@/data/gameplay-systems'
-import { interactiveGraphs } from '@/data/interactive-graphs'
+
+import { routes } from '@/data/routes'
 
 type MenuContextType = {
     isMenuOpen: boolean
@@ -75,54 +75,43 @@ function Menu() {
                 }`}
             >
                 <ul className="m-0 mt-6 flex flex-col gap-2 p-0">
-                    <li className="relative m-0">
-                        <NavMenuLink href="/">
-                            <HomeIcon size={22} />
-                            Cos&apos;è Slice & Dice?
-                        </NavMenuLink>
-                    </li>
-                    <li className="relative m-0">
-                        <NavMenuLink href="/faq">
-                            <CircleHelp size={22} />
-                            F.A.Q.
-                        </NavMenuLink>
-                    </li>
-                    <li className="relative m-0">
-                        <NavMenuAccordion>
-                            <NavMenuAccordionTrigger>
-                                <BookText size={22} />
-                                Sistemi di Gioco
-                            </NavMenuAccordionTrigger>
-                            <NavMenuAccordionMenu>
-                                {gameplaySystems.map(({ name, url }) => (
-                                    <NavMenuAccordionLink key={url} href={`/sistemi-di-gioco/${url}`}>
+                    {routes.map(({ name, url, icon, items }, index) => {
+                        // Build icon element
+                        const Icon = icon
+
+                        let Item
+
+                        if (items && items.length > 0) {
+                            Item = (
+                                <NavMenuAccordion>
+                                    <NavMenuAccordionTrigger>
+                                        <Icon size={22} />
                                         {name}
-                                    </NavMenuAccordionLink>
-                                ))}
-                            </NavMenuAccordionMenu>
-                        </NavMenuAccordion>
-                    </li>
-                    <li className="relative m-0">
-                        <NavMenuAccordion>
-                            <NavMenuAccordionTrigger>
-                                <LineChart size={22} />
-                                Grafici Interattivi
-                            </NavMenuAccordionTrigger>
-                            <NavMenuAccordionMenu>
-                                {interactiveGraphs.map(({ name, url }) => (
-                                    <NavMenuAccordionLink key={url} href={`/grafici-interattivi/${url}`}>
-                                        {name}
-                                    </NavMenuAccordionLink>
-                                ))}
-                            </NavMenuAccordionMenu>
-                        </NavMenuAccordion>
-                    </li>
-                    <li className="relative m-0">
-                        <NavMenuLink href="/glossario">
-                            <List size={22} />
-                            Glossario
-                        </NavMenuLink>
-                    </li>
+                                    </NavMenuAccordionTrigger>
+                                    <NavMenuAccordionMenu>
+                                        {items.map((item, index) => (
+                                            <NavMenuAccordionLink key={index} href={`/${url}/${item.url}`}>
+                                                {item.name}
+                                            </NavMenuAccordionLink>
+                                        ))}
+                                    </NavMenuAccordionMenu>
+                                </NavMenuAccordion>
+                            )
+                        } else {
+                            Item = (
+                                <NavMenuLink href={`/${url}`}>
+                                    <Icon size={22} />
+                                    {name}
+                                </NavMenuLink>
+                            )
+                        }
+
+                        return (
+                            <li className={`relative m-0`} key={index}>
+                                {Item}
+                            </li>
+                        )
+                    })}
                 </ul>
             </nav>
         </div>

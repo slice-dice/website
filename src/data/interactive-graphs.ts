@@ -1,9 +1,6 @@
-interface InteractiveGraph {
-    name: string
-    url: string
-}
+import { SubRoute } from './routes'
 
-export const interactiveGraphs: InteractiveGraph[] = [
+export const interactiveGraphs: SubRoute[] = [
     {
         name: 'Basic Role Playing',
         url: 'basic-role-playing',
