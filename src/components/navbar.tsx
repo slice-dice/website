@@ -5,6 +5,7 @@ import { NavbarLink } from './navbar-link'
 import { NavbarDropdown, NavbarDropdownTrigger, NavbarDropdownMenu, NavbarDropdownItem } from './navbar-dropdown'
 
 import { gameplaySystems } from '@/data/gameplay-systems'
+import { interactiveGraphs } from '@/data/interactive-graphs'
 
 export const Navbar = (): ReactElement => {
     return (
@@ -27,6 +28,19 @@ export const Navbar = (): ReactElement => {
                         <NavbarDropdownMenu>
                             {gameplaySystems.map(({ name, url }) => (
                                 <NavbarDropdownItem key={url} href={`/sistemi-di-gioco/${url}`}>
+                                    {name}
+                                </NavbarDropdownItem>
+                            ))}
+                        </NavbarDropdownMenu>
+                    </NavbarDropdown>
+                    <NavbarDropdown>
+                        <NavbarDropdownTrigger>
+                            <BookText size={22} />
+                            Grafici Interattivi
+                        </NavbarDropdownTrigger>
+                        <NavbarDropdownMenu>
+                            {interactiveGraphs.map(({ name, url }) => (
+                                <NavbarDropdownItem key={url} href={`/grafici-interattivi/${url}`}>
                                     {name}
                                 </NavbarDropdownItem>
                             ))}

@@ -1,6 +1,6 @@
 'use client'
 
-import { BookText, CircleHelp, HomeIcon, MenuIcon, X } from 'lucide-react'
+import { BookText, CircleHelp, HomeIcon, LineChart, MenuIcon, X } from 'lucide-react'
 import { createContext, ReactElement, ReactNode, useContext, useState } from 'react'
 import {
     NavMenuAccordion,
@@ -10,6 +10,7 @@ import {
     NavMenuLink,
 } from './nav-menu-link'
 import { gameplaySystems } from '@/data/gameplay-systems'
+import { interactiveGraphs } from '@/data/interactive-graphs'
 
 type MenuContextType = {
     isMenuOpen: boolean
@@ -95,6 +96,21 @@ function Menu() {
                             <NavMenuAccordionMenu>
                                 {gameplaySystems.map(({ name, url }) => (
                                     <NavMenuAccordionLink key={url} href={`/sistemi-di-gioco/${url}`}>
+                                        {name}
+                                    </NavMenuAccordionLink>
+                                ))}
+                            </NavMenuAccordionMenu>
+                        </NavMenuAccordion>
+                    </li>
+                    <li className="relative m-0">
+                        <NavMenuAccordion>
+                            <NavMenuAccordionTrigger>
+                                <LineChart size={22} />
+                                Grafici Interattivi
+                            </NavMenuAccordionTrigger>
+                            <NavMenuAccordionMenu>
+                                {interactiveGraphs.map(({ name, url }) => (
+                                    <NavMenuAccordionLink key={url} href={`/grafici-interattivi/${url}`}>
                                         {name}
                                     </NavMenuAccordionLink>
                                 ))}
