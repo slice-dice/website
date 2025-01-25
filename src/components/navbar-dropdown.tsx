@@ -23,11 +23,29 @@ const NavbarDropdownContext = createContext<NavbarDropdownContextType>({
 
 function NavbarDropdownProvider({ children }: { children: ReactNode }): ReactElement {
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    const toggle = () => setIsOpen(!isOpen)
+    const toggle = () => {
+        // Close all other dropdowns when opening this one
+        if (!isOpen) {
+            const dropdowns = document.querySelectorAll('.navbar-dropdown')
+
+            // check for each dropdown if it is open (dropdown-menu is visible) and close it by clicking the trigger
+            dropdowns.forEach((dropdown) => {
+                const trigger = dropdown.querySelector('.dropdown-trigger') as HTMLButtonElement
+                const menu = dropdown.querySelector('.dropdown-menu') as HTMLDivElement
+
+                if (menu.classList.contains('block')) {
+                    trigger.click()
+                }
+            })
+        }
+
+        // Toggle this dropdown
+        setIsOpen(!isOpen)
+    }
 
     const [hasActiveLink, setHasActiveLink] = useState<boolean>(false)
 
-    // When click outside the dropdown, close it
+    // When click outside this specific dropdown, close it
     useEffect(() => {
         const handleClick = (event: MouseEvent) => {
             const target = event.target as HTMLElement
@@ -78,7 +96,7 @@ function useNavbarDropdown(): NavbarDropdownContextType {
 export function NavbarDropdown({ children }: { children: ReactNode }): ReactElement {
     return (
         <NavbarDropdownProvider>
-            <div className="navbar-dropdown">{children}</div>
+            <div className="navbar-dropdown relative">{children}</div>
         </NavbarDropdownProvider>
     )
 }
@@ -88,7 +106,7 @@ export function NavbarDropdownTrigger({ children }: { children: ReactNode }): Re
 
     return (
         <button
-            className={`transition-color flex items-center gap-2 duration-300 ease-in-out hover:text-[#CC4A49] ${isOpen ? 'text-[#CC4A49]' : ''} ${hasActiveLink && 'underline decoration-[3px] underline-offset-8'}`}
+            className={`dropdown-trigger transition-color flex items-center gap-2 duration-300 ease-in-out hover:text-[#CC4A49] ${isOpen ? 'text-[#CC4A49]' : ''} ${hasActiveLink && 'underline decoration-[3px] underline-offset-8'}`}
             onClick={toggle}
         >
             {children}
@@ -101,7 +119,7 @@ export function NavbarDropdownMenu({ children }: { children: ReactNode }): React
 
     return (
         <div
-            className={`absolute right-0 top-full z-10 mt-2 w-full rounded-lg border border-gray-200 bg-white p-2 shadow-lg sm:w-64 ${isOpen ? 'block' : 'hidden'}`}
+            className={`dropdown-menu absolute right-0 top-full z-10 mt-2 w-full border border-gray-200 bg-white p-2 shadow-lg sm:w-64 ${isOpen ? 'block' : 'hidden'}`}
         >
             {children}
         </div>
