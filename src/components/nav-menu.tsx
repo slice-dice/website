@@ -1,6 +1,6 @@
 'use client'
 
-import { BookText, CircleHelp, HomeIcon, LineChart, MenuIcon, X } from 'lucide-react'
+import { BookText, CircleHelp, HomeIcon, LineChart, List, MenuIcon, X } from 'lucide-react'
 import { createContext, ReactElement, ReactNode, useContext, useState } from 'react'
 import {
     NavMenuAccordion,
@@ -116,6 +116,12 @@ function Menu() {
                                 ))}
                             </NavMenuAccordionMenu>
                         </NavMenuAccordion>
+                    </li>
+                    <li className="relative m-0">
+                        <NavMenuLink href="/glossario">
+                            <List size={22} />
+                            Glossario
+                        </NavMenuLink>
                     </li>
                 </ul>
             </nav>
