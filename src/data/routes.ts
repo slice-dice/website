@@ -1,4 +1,4 @@
-import { BookText, CircleHelp, LucideIcon, Home, LineChart, List } from 'lucide-react'
+import { BookText, CircleHelp, LucideIcon, Home, LineChart, List, Quote } from 'lucide-react'
 
 import { gameplaySystems } from './gameplay-systems'
 import { interactiveGraphs } from './interactive-graphs'
@@ -42,5 +42,10 @@ export const routes: Route[] = [
         name: 'Glossario',
         url: 'glossario',
         icon: List,
+    },
+    {
+        name: 'Game Design 101',
+        url: 'game-design-101',
+        icon: Quote,
     },
 ]
