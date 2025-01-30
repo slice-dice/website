@@ -18,8 +18,7 @@ export const gameDesign101: GameDesign101[] = [
         url: 'sistema-obiettivo-sfida-risultato',
         categories: ['conflitto', 'game design 101', 'narrazione'],
         description:
-            'Tutti i giochi condividono la stessa identica struttura? Ovviamente no.\
-            Un gioco di carte ha un formato molto diverso da un gioco da tavolo; un gioco d’azione in 3D non è certo la stessa cosa di un trivia. Tuttavia, ci deve pur essere qualcosa che condividono affinché li si possa chiaramente riconoscere tutti quanti come giochi.',
+            'Tutti i giochi condividono la stessa identica struttura? Ovviamente no.\n Un gioco di carte ha un formato molto diverso da un gioco da tavolo; un gioco d’azione in 3D non è certo la stessa cosa di un trivia. Tuttavia, ci deve pur essere qualcosa che condividono affinché li si possa chiaramente riconoscere tutti quanti come giochi.',
     },
     {
         name: 'Un gioco è le proprie regole',
@@ -33,8 +32,7 @@ export const gameDesign101: GameDesign101[] = [
         url: 'sensazione-di-incertezza',
         categories: ['dinamiche', 'meccaniche', 'scelte'],
         description:
-            'Pensateci un attimo: se sapessi chi vincerà il gioco prima ancora che inizi, perché perdere tempo a giocare? C’è una ragione se lo sport è mostrato in tv quasi sempre in tempo reale: privato del dramma dell’incertezza del risultato, si fa fatica a mantenere alto l’interesse dello spettatore.\
-            Un modo per comprendere perché i giochi abbiano bisogno di incertezza è che se il risultato di un gioco è predeterminato, l’esperienza di gioco diventa priva di significato.',
+            'Pensateci un attimo: se sapessi chi vincerà il gioco prima ancora che inizi, perché perdere tempo a giocare? C’è una ragione se lo sport è mostrato in tv quasi sempre in tempo reale: privato del dramma dell’incertezza del risultato, si fa fatica a mantenere alto l’interesse dello spettatore.\n Un modo per comprendere perché i giochi abbiano bisogno di incertezza è che se il risultato di un gioco è predeterminato, l’esperienza di gioco diventa priva di significato.',
     },
     {
         name: 'Sfidare il giocatore',
@@ -55,8 +53,7 @@ export const gameDesign101: GameDesign101[] = [
         url: 'conflitto-e-strategia',
         categories: ['conflitto', 'dinamiche'],
         description:
-            'Il conflitto richiede che il gioco abbia una componente quanto meno tattica e spesso anche una strategica, oppure entrambe.\
-            La strategia è l’atto mentale della pianificazione: avvantaggiarsi della propria situazione e delle proprie risorse, anticipare le mosse dell’avversario, conoscere e minimizzare le proprie debolezze. Una sfida di tipo strategico è quella in cui un giocatore deve guardare il gioco attentamente e stabilire un piano d’azione.',
+            'Il conflitto richiede che il gioco abbia una componente quanto meno tattica e spesso anche una strategica, oppure entrambe.\n La strategia è l’atto mentale della pianificazione: avvantaggiarsi della propria situazione e delle proprie risorse, anticipare le mosse dell’avversario, conoscere e minimizzare le proprie debolezze. Una sfida di tipo strategico è quella in cui un giocatore deve guardare il gioco attentamente e stabilire un piano d’azione.',
     },
     {
         name: 'Dinamiche: il motore in movimento',
