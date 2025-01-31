@@ -1,11 +1,12 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
+import { CateroriesList } from '@/components/categories-list'
 
 import { gameDesign101 } from '@/data/game-design-101'
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     // Get the category from the URL
-    const category = (await params).slug
+    const category = (await params).slug.replace(/%20/g, ' ')
 
     // Obtain the list of articles for the category
     const articles = gameDesign101.filter((article) => article.categories.includes(category))
@@ -18,9 +19,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 </h1>
             </div>
             <div>
-                {articles.map(({ name, url, description }, i) => (
+                {articles.map(({ name, url, description, categories }, i) => (
                     <article key={i} className="prose lg:prose-xl m-0 mb-6 p-0 sm:mb-12 lg:mb-16 xl:mb-20">
                         <header className="mb-4 sm:mb-6 lg:mb-7 xl:mb-8">
+                            <CateroriesList categories={categories} />
                             <h2 className="text-[1.75rem] font-bold leading-[1.4] text-[#CC4A49] sm:text-[2rem] sm:leading-[1.4] lg:text-[2.5rem] lg:leading-[1.4] xl:text-[3rem] xl:leading-[1.4]">
                                 <Link
                                     href={`/game-design-101/${url}`}
