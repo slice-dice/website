@@ -1,11 +1,15 @@
+import { Main } from '@/components/main'
+
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug
     const { default: Docs } = await import(`../../../docs/${slug}.mdx`)
 
     return (
-        <article className="prose lg:prose-xl">
-            <Docs />
-        </article>
+        <Main>
+            <article className="prose lg:prose-xl">
+                <Docs />
+            </article>
+        </Main>
     )
 }
 

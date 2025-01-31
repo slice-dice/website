@@ -1,3 +1,4 @@
+import { Main } from '@/components/main'
 import { interactiveGraphs } from '@/data/interactive-graphs'
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -5,9 +6,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     const { default: Docs } = await import(`../../../../docs/grafici-interattivi/${slug}.mdx`)
 
     return (
-        <article className="prose lg:prose-xl">
-            <Docs />
-        </article>
+        <Main>
+            <article className="prose lg:prose-xl">
+                <Docs />
+            </article>
+        </Main>
     )
 }
 

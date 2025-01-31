@@ -1,3 +1,4 @@
+import { Main } from '@/components/main'
 import { Fragment } from 'react'
 import Link from 'next/link'
 import { CateroriesList } from '@/components/categories-list'
@@ -12,7 +13,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     const articles = gameDesign101.filter((article) => article.categories.includes(category))
 
     return (
-        <>
+        <Main>
             <div className="mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
                 <h1 className="text-[1.125rem] font-bold leading-[1.4] text-[#CC4A49] sm:text-[1.25rem] sm:leading-[1.4] lg:text-[1.375rem] lg:leading-[1.4] xl:text-[1.5rem] xl:leading-[1.4]">
                     Categoria: {category}
@@ -51,6 +52,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                     </article>
                 ))}
             </div>
-        </>
+        </Main>
     )
 }

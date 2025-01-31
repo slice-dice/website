@@ -31,9 +31,7 @@ export default async function RootLayout({
                     <div className="mx-auto my-0 w-full max-w-[1440px] overflow-hidden bg-white p-0">
                         <Header />
                         <Hero />
-                        <div className="px-6 pb-0 pt-6 sm:px-8 sm:pt-8 lg:px-16 lg:pt-16 xl:px-20 xl:pt-20">
-                            <main className="mx-auto mb-20 max-w-[880px]">{children}</main>
-                        </div>
+                        <div className="px-6 pb-0 pt-6 sm:px-8 sm:pt-8 lg:px-16 lg:pt-16 xl:px-20 xl:pt-20">{children}</div>
                         <Footer />
                     </div>
                 </ProgressBarProvider>
