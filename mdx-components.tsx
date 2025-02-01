@@ -8,11 +8,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         /**
          * Default components
          */
-        p: ({ children }: { children: React.ReactNode }) => (
-            <p className="mb-8 p-5 text-justify text-[1.0625rem] leading-[1.75] sm:text-[1.0625rem] sm:leading-[1.75] lg:text-[1.125rem] lg:leading-[1.75] xl:text-[1.1875rem] xl:leading-[1.75]">
-                {children}
-            </p>
-        ),
+        p: ({ children }: { children: React.ReactNode }) => <p className="mb-8 p-5 text-justify text-[100%]">{children}</p>,
         h1: ({ children }: { children: React.ReactNode }) => (
             <h1 className="m-0 mb-4 break-words p-0 text-2xl font-bold text-[#CC4A49] sm:mb-6 sm:text-3xl lg:mb-7 lg:text-4xl xl:mb-8 xl:text-5xl">
                 {children}

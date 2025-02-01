@@ -1,6 +1,8 @@
 import { Main, MainFooter } from '@/components/main'
-import { gameDesign101 } from '@/data/game-design-101'
+import { Article } from '@/components/article'
 import Link from 'next/link'
+
+import { gameDesign101 } from '@/data/game-design-101'
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug
@@ -18,12 +20,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     return (
         <>
             <Main>
-                <article className="prose lg:prose-xl">
+                <Article>
                     <h1 className="m-0 mb-4 break-words p-0 text-2xl font-bold text-[#CC4A49] sm:mb-6 sm:text-3xl lg:mb-7 lg:text-4xl xl:mb-8 xl:text-5xl">
                         {currentSlug?.name}
                     </h1>
                     <Docs />
-                </article>
+                </Article>
             </Main>
             <MainFooter>
                 <nav className="mx-auto my-0 w-full max-w-[1120px]">

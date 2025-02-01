@@ -1,4 +1,6 @@
 import { Main } from '@/components/main'
+import { Article } from '@/components/article'
+
 import { interactiveGraphs } from '@/data/interactive-graphs'
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -7,9 +9,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
     return (
         <Main>
-            <article className="prose lg:prose-xl">
+            <Article>
                 <Docs />
-            </article>
+            </Article>
         </Main>
     )
 }
