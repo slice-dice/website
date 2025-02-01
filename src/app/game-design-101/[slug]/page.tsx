@@ -1,9 +1,10 @@
 import { Main, MainFooter } from '@/components/main'
 import { Article } from '@/components/article'
+import { CateroriesList } from '@/components/categories-list'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { gameDesign101 } from '@/data/game-design-101'
-import { CateroriesList } from '@/components/categories-list'
 
 const overrideMdxComponents = {
     p: ({ children }: { children: React.ReactNode }) => (
@@ -12,8 +13,36 @@ const overrideMdxComponents = {
     h4: ({ children }: { children: React.ReactNode }) => (
         <h4 className="m-0 mb-6 text-justify text-[80%] italic">{children}</h4>
     ),
+    h5: ({ children }: { children: React.ReactNode }) => (
+        <h5 className="m-0 mb-4 px-5 text-justify text-[90%] font-bold text-[#cc4a49]">{children}</h5>
+    ),
+    img: ({ src, alt, title }: { src: string; alt: string; title: string }) => (
+        <Image src={src} alt={alt} title={title} width={423} height={365} />
+    ),
     ImageCaption: ({ children }: { children: React.ReactNode }) => (
         <figcaption className="mb-4 mt-2 text-center text-[1rem] text-black/50">{children}</figcaption>
+    ),
+    ImageAuthor: ({
+        alt,
+        src,
+        width,
+        height,
+        children,
+    }: {
+        alt: string
+        src: string
+        width: number
+        height: number
+        children: React.ReactNode
+    }) => (
+        <>
+            <div className="flex items-center justify-center">
+                <figure className="overflow-hidden rounded-full">
+                    <Image src={src} alt={alt} width={width} height={height} title={alt} />
+                </figure>
+            </div>
+            <figcaption className="mb-4 mt-2 text-center text-[1rem] text-black/50">{children}</figcaption>
+        </>
     ),
 }
 

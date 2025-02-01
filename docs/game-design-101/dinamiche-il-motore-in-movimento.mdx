@@ -1,0 +1,50 @@
+#### Il brano che segue è una traduzione amatoriale di alcuni estratti de La progettazione dei giochi da tavolo: strumenti, tecniche e design pattern di Walter Nuccio*. Le uniche modifiche apportate sono quelle necessarie a dare un senso di unitarietà al testo.
+
+**Il framework MDA** (*Mechanics, Dynamics and Aesthetics*) **distingue le meccaniche**, cioè le regole del gioco, **dalle dinamiche**, ovvero ciò che effettivamente accade in partita quando le regole vengono applicate.\
+Chi non ha molta esperienza nell’ambito dei giochi da tavoli potrebbe supporre, semplicisticamente, che sia sufficiente avere ben chiare le regole di un gioco per poter immaginare il suo svolgimento senza effettivamente giocarlo. La realtà è ben diversa: la semplice lettura del regolamento spesso riesce a trasmettere solo in parte o per nulla l’idea di ciò che accade davvero nel corso della partita.\
+Ciò non dovrebbe sorprendere: sono infatti i giocatori a stabilire, pur nei limiti imposti dalle regole, il momento e la modalità più opportuni per attivare le meccaniche.\
+\
+**Prendiamo per esempio il gioco del Poker**: le regole si limitano a definire il numero di carte che ogni giocatore riceve nonché il momento e le modalità in base alle quali egli può cambiare le proprie carte con altre, fare una puntata o rilanciare. **Nessuna regola impone al giocatore di bluffare**, eppure questo è proprio un tipico comportamento adottato da molti giocatori, che tentano di confondere gli avversari circa il punteggio che effettivamente possiedono.
+
+> Tutti quei fenomeni che, come il bluff, è possibile osservare durante una partita ma che non sono esplicitamente imposti o descritti dalle meccaniche, si definiscono dinamiche.
+
+Sono dinamiche, ad esempio, la propensione ad accumulare una data risorsa, la decisione di attendere che l’avversario faccia una certa mossa, la preferenza per una strategia rischiosa o per una più conservativa, il tentativo di bluffare, di giocare d’anticipo, la cooperazione con un altro giocatore e così via. \
+\
+A questo punto dovrebbe essere chiara la relazione che esiste tra meccaniche e dinamiche: **se le meccaniche sono il motore del gioco, allora le dinamiche sono tutto ciò che accade dopo che il motore è stato acceso**.\
+In altri termini, mentre le meccaniche descrivono ciò che il giocatore può o non può fare, le dinamiche rappresentano ciò che effettivamente i giocatori “tendono” a fare nel corso della partita.\
+\
+È importante sottolineare che **una meccanica non potrà mai dar luogo forzatamente ad una dinamica**, sempre che si voglia lasciare al giocatore una certa libertà di scelta: essa potrà solo incoraggiarla, creando i presupposti affinché quella dinamica possa emergere, oppure potrà inibirla, riducendo la probabilità che essa si manifesti.
+
+<ImageBlock>
+    <Image rounded>![Poker](/images/game-design-101/8.jpg 'Poker')</Image>
+</ImageBlock>
+
+Torniamo, per esempio, al gioco del Poker citato prima: cos’è che favorisce la dinamica del bluff?\
+Due fattori sembrano essere determinanti: in primo luogo il fatto che le carte di ciascun giocatore siano visibili solo a lui e nascoste agli avversari; in secondo luogo il fatto che, ad aggiudicarsi il piatto, sarà l’ultimo giocatore rimasto dopo che tutti avranno passato. Il primo fattore, **la presenza di informazioni nascoste**, è quello che **rende possibile il bluff**; il secondo è quello che lo incoraggia.\
+\
+Il game design è un’attività complessa. Uno dei motivi di questa complessità è proprio il fatto che **non è semplice prevedere completamente cosa accadrà durante la partita**, anche una volta che le regole del gioco siano state completamente fissate. Non è raro che, nel corso dei primi playtest, emergano molteplici imprevisti.\
+\
+In alcuni casi le dinamiche venute alla luce possono rappresentare una piacevole sorpresa.\
+\
+Pensiamo ad esempio agli Scacchi: l’ideatore di questo gioco (di cui non si conosce l’identità) non poteva certamente prevedere che dalle semplici regole che stabiliscono il movimento dei pezzi potessero sorgere tattiche, strategie e stili di gioco in quantità tali da generare un’intera letteratura sull’argomento.\
+Uno dei compiti del designer durante il playtest consiste proprio nel riconoscere le dinamiche quando sono ancora allo stato embrionale, nel supportarle ed incoraggiarle, modificando le meccaniche del sistema affinché esse possano emergere. Ad esempio, se il designer nota che una dinamica potenzialmente interessante è limitata dalla presenza di vincoli troppo stringenti, che riducono troppo le possibilità di azione dei giocatori, egli può decidere di rilassare alcuni di questi vincoli lasciando che la dinamica emerga in tutta la sua forza.\
+\
+Tuttavia non sempre l’obiettivo del designer è quello di far emergere una dinamica: spesso, infatti, l’esigenza che si presenta è proprio quella opposta, cioè quella di impedire che si verifichino situazioni di gioco indesiderate.\
+\
+Uno scenario molto frequente è questo: il designer crea un gioco immaginandone lo svolgimento nella sua mente, definisce delle regole che sulla carta sembrano divertenti e immagina che la partita si svolgerà in un certo modo e che si creeranno determinate situazioni di gioco. Purtroppo, però, fin dal primo playtest le cose non vanno come previsto ed emergono, invece, delle dinamiche sgradevoli o dei veri e propri problemi.\
+Molti di questi sono talmente ricorrenti che hanno persino un nome: *runaway leader*, ad esempio, indica quella situazione in cui il giocatore in testa continua ad accumulare un vantaggio sempre maggiore, diventano irraggiungibile dagli avversari; il termine *kingmaker*, invece, sta ad indicare che un giocatore ormai impossibilitato a vincere ha i mezzi per determinare la vittoria di uno dei suoi avversari.\
+\
+**La maggior parte delle criticità di un gioco e delle problematiche che emergono in fase di playtest non sono altro che dinamiche indesiderate**: dinamiche che il designer preferirebbe che non emergessero affatto o che fossero quantomeno tenute sotto controllo.
+
+> Ripetiamo che il designer non ha un controllo diretto sulle dinamiche: l’unico mezzo che ha a disposizione è quello di agire in modo indiretto, intervenendo sulle meccaniche in modo che esse favoriscano ed incoraggino le dinamiche desiderate e, al tempo stesso, sfavoriscano o rendano poco frequenti le dinamiche indesiderate.
+
+Possiamo addirittura azzardare quanto segue: **nessuna meccanica è, di per sé, funzionante o non funzionante**, giusta o sbagliata; **esistono solo meccaniche più o meno adatte** in relazione alle dinamiche che si vogliono generare.
+
+<ImageBlock>
+    <ImageAuthor src="/images/game-design-101/walter-nuccio.jpg" alt="Walter Nuccio" width="300" height="300"/>
+</ImageBlock>
+
+#### (*) Walter Nuccio è un progettista software e game designer italiano. Si occupa di giochi da tavolo e giochi di carte ed è frequentemente ospite delle maggiori fiere dedicate al mondo geek.
+
+<ShoppingTips>Acquista su [Amazon](https://www.amazon.it/progettazione-tavolo-Strumenti-tecniche-pattern/dp/8842555142) (ITA)</ShoppingTips>
+<ShoppingTips>Acquista su [IBS](https://www.ibs.it/progettazione-dei-giochi-da-tavolo-libro-walter-nuccio/e/9788842555148) (ITA)</ShoppingTips>
