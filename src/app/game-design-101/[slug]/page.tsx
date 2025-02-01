@@ -3,6 +3,19 @@ import { Article } from '@/components/article'
 import Link from 'next/link'
 
 import { gameDesign101 } from '@/data/game-design-101'
+import { CateroriesList } from '@/components/categories-list'
+
+const overrideMdxComponents = {
+    p: ({ children }: { children: React.ReactNode }) => (
+        <p className="m-0 mb-6 p-[20px] text-justify text-[90%]">{children}</p>
+    ),
+    h4: ({ children }: { children: React.ReactNode }) => (
+        <h4 className="m-0 mb-6 text-justify text-[80%] italic">{children}</h4>
+    ),
+    ImageCaption: ({ children }: { children: React.ReactNode }) => (
+        <figcaption className="mb-4 mt-2 text-center text-[1rem] text-black/50">{children}</figcaption>
+    ),
+}
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug
@@ -21,10 +34,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <>
             <Main>
                 <Article>
-                    <h1 className="m-0 mb-4 break-words p-0 text-2xl font-bold text-[#CC4A49] sm:mb-6 sm:text-3xl lg:mb-7 lg:text-4xl xl:mb-8 xl:text-5xl">
-                        {currentSlug?.name}
-                    </h1>
-                    <Docs />
+                    <header>
+                        {currentSlug?.categories && <CateroriesList categories={currentSlug.categories} />}
+                        <h1 className="m-0 mb-4 break-words p-0 text-2xl font-bold text-[#CC4A49] sm:mb-6 sm:text-3xl lg:mb-7 lg:text-4xl xl:mb-8 xl:text-5xl">
+                            {currentSlug?.name}
+                        </h1>
+                    </header>
+                    <Docs components={overrideMdxComponents} />
                 </Article>
             </Main>
             <MainFooter>

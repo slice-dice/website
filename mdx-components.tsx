@@ -1,14 +1,16 @@
 import type { MDXComponents } from 'mdx/types'
 import Image from 'next/image'
-import { Anchor, TableOfContent, TableOfContentId } from '@/components/table-of-content'
 import Link from 'next/link'
+import { Anchor, TableOfContent, TableOfContentId } from '@/components/table-of-content'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
         /**
          * Default components
          */
-        p: ({ children }: { children: React.ReactNode }) => <p className="mb-8 p-5 text-justify text-[100%]">{children}</p>,
+        p: ({ children }: { children: React.ReactNode }) => (
+            <p className="m-0 mb-6 p-[20px] text-justify text-[100%]">{children}</p>
+        ),
         h1: ({ children }: { children: React.ReactNode }) => (
             <h1 className="m-0 mb-4 break-words p-0 text-2xl font-bold text-[#CC4A49] sm:mb-6 sm:text-3xl lg:mb-7 lg:text-4xl xl:mb-8 xl:text-5xl">
                 {children}
@@ -72,13 +74,17 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         Anchor: ({ id }: { id: string }) => <Anchor id={id} />,
         // ImageBlock
         ImageBlock: ({ children }: { children: React.ReactNode }) => <div className="mb-6 pb-4">{children}</div>,
-        Image: ({ children }: { children: React.ReactNode }) => (
+        Image: ({ children, rounded = false }: { children: React.ReactNode; rounded: boolean }) => (
             <div className="flex items-center justify-center">
-                <div className="border-y-[5px] border-[#CC4A49]">{children}</div>
+                {rounded ? (
+                    <figure className="overflow-hidden rounded-full">{children}</figure>
+                ) : (
+                    <figure className="border-y-[5px] border-[#CC4A49]">{children}</figure>
+                )}
             </div>
         ),
         ImageCaption: ({ children }: { children: React.ReactNode }) => (
-            <div className="mt-2 text-center text-[12px] text-black/50">{children}</div>
+            <figcaption className="mt-2 text-center text-[12px] text-black/50">{children}</figcaption>
         ),
         // CenterBlock
         CenterBlock: ({ children }: { children: React.ReactNode }) => <div className="mx-auto w-[80%]">{children}</div>,
