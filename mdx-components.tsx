@@ -1,7 +1,6 @@
 import type { MDXComponents } from 'mdx/types'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Anchor, TableOfContent, TableOfContentId } from '@/components/table-of-content'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
@@ -68,10 +67,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 {children}
             </td>
         ),
-        // TableOfContent
-        TableOfContent: ({ ids }: { ids: TableOfContentId[] }) => <TableOfContent ids={ids} />,
-        // Anchor
-        Anchor: ({ id }: { id: string }) => <Anchor id={id} />,
+
         // ImageBlock
         ImageBlock: ({ children }: { children: React.ReactNode }) => <div className="mb-6 pb-4">{children}</div>,
         Image: ({ children, rounded = false }: { children: React.ReactNode; rounded: boolean }) => (
@@ -96,14 +92,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
                 </p>
             </h3>
         ),
-
-        // OpenD6
-        OpenD6Strength: ({ children }: { children: React.ReactNode }) => <span className="text-[#cc4a48]">{children}</span>,
-        OpenD6Agility: ({ children }: { children: React.ReactNode }) => <span className="text-[#588c73]">{children}</span>,
-        OpenD6Intelligence: ({ children }: { children: React.ReactNode }) => (
-            <span className="text-[#3282a6]">{children}</span>
-        ),
-        OpenD6Charisma: ({ children }: { children: React.ReactNode }) => <span className="text-[#88578b]">{children}</span>,
 
         //
         ...components,

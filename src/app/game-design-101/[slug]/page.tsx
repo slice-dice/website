@@ -7,14 +7,12 @@ import Link from 'next/link'
 import { gameDesign101 } from '@/data/game-design-101'
 
 const overrideMdxComponents = {
-    p: ({ children }: { children: React.ReactNode }) => (
-        <p className="m-0 mb-6 p-[20px] text-justify text-[90%]">{children}</p>
-    ),
+    p: ({ children }: { children: React.ReactNode }) => <p className="m-0 mb-6 p-[20px] text-justify">{children}</p>,
     h4: ({ children }: { children: React.ReactNode }) => (
-        <h4 className="m-0 mb-6 text-justify text-[80%] italic">{children}</h4>
+        <h4 className="m-0 mb-6 text-justify text-[90%] italic">{children}</h4>
     ),
     h5: ({ children }: { children: React.ReactNode }) => (
-        <h5 className="m-0 mb-4 px-5 text-justify text-[90%] font-bold text-[#cc4a49]">{children}</h5>
+        <h5 className="m-0 mb-4 px-5 text-justify font-bold text-[#cc4a49]">{children}</h5>
     ),
     img: ({ src, alt, title }: { src: string; alt: string; title: string }) => (
         <Image src={src} alt={alt} title={title} width={423} height={365} />
