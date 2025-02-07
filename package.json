@@ -16,7 +16,8 @@
     "next": "15.1.3",
     "next-nprogress-bar": "^2.4.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
