@@ -1,1 +1,16 @@
+import { D20System } from '../../src/components/graphs/d20-system';
+
 # d20 system
+
+<GraphRule>
+Il sistema prevede classi di difficoltà fisse: 10 è una prova facile, 15 una prova media, 20 una prova difficile.\
+Dal momento però che le abilità prevedono un tetto limite legato al livello, questo fa sì che le classi che ricevono più punti abilità iniziali (come ad esempio il ladro e il bardo) abbiano molte abilità all’inizio e siano più avvantaggiate ai bassi livelli. \
+\
+I sei punteggi di caratteristica sono la base della costruzione del personaggio fin dalla prima edizione di D&D. Scelti alla creazione del PG e modificati in base alla razza, influenzano pesantemente il modo in cui il personaggio può pensare e agire. Nel d20system, ad ogni punteggio è associato un modificatore pari a (Caratteristica-10)/2, che si somma ad ogni tiro di dado in cui quella caratteristica è rilevante.\
+\
+Facciamo un esempio concreto, prendendo in considerazione un ladro di livello 6, che può mettere fino a 9 gradi nell'abilità Scassinare, e avere 16 in Destrezza, con conseguente bonus di caratteristica +3. Questo personaggio parte con una base di 12 (9+3), a cui deve essere sommato il risultato del d20. Di fatto, un personaggio di livello 6 supera in automatico tutte le CD facili, molto facilmente le CD intermedie e con un po' di fortuna anche quelle difficili.\
+\
+Di fatto, a partire dal livello 5 o dal livello 6, il bilanciamento del gioco sta tutto in mano al Dungeon Master più che ai numeri interni al sistema. Il DM deve progressivamente aumentare in maniera artificiale la difficoltà delle sfide, esattamente come succede in un videogioco, per garantire che anche i personaggi di livello più alto incontrino ostacoli sul proprio percorso. Per questo è forse auspicabile ignorare le CD predefinite dal sistema e usare una formula del tipo 10+livello del PG+3 o +5.
+</GraphRule>
+
+<D20System />

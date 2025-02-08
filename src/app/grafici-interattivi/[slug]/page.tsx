@@ -2,6 +2,11 @@ import { Main } from '@/components/main'
 import { Article } from '@/components/article'
 
 import { interactiveGraphs } from '@/data/interactive-graphs'
+import { GraphRule } from '@/components/graphs-rule'
+
+const overrideMDXComponents = {
+    GraphRule: ({ children }: { children: React.ReactNode }) => <GraphRule>{children}</GraphRule>,
+}
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug
@@ -10,7 +15,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     return (
         <Main>
             <Article>
-                <Docs />
+                <Docs components={overrideMDXComponents} />
             </Article>
         </Main>
     )
