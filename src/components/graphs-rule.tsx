@@ -15,12 +15,12 @@ export function GraphRule({ children }: { children: React.ReactNode }) {
                 >
                     <h3 className="text-lg font-bold">Regole</h3>
                     <ChevronDown
-                        className={`transform ${collapsed ? 'rotate-0' : 'rotate-180'} transition-transform duration-300 ease-in-out`}
+                        className={`transform ${collapsed ? 'rotate-180' : 'rotate-0'} transition-transform duration-300 ease-in-out`}
                     />
                 </button>
             </div>
             <div
-                className={`transition-max-height w-full overflow-hidden duration-500 ease-in-out ${collapsed ? 'max-h-0' : 'max-h-screen'}`}
+                className={`transition-max-height w-full overflow-hidden duration-500 ease-in-out ${collapsed ? 'max-h-screen' : 'max-h-0'}`}
             >
                 {children}
             </div>
