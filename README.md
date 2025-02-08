@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Slice & Dice
 
-## Getting Started
+> _To slice and dice is to break a body of information down into smaller parts or to examine it from different viewpoints so that you can understand it better._
 
-First, run the development server:
+Questo è **Slice & Dice**, una piccola directory di sistemi di gioco per gli aspiranti gestori di PBC.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack Tecnologico
+
+- **Next.js 15** - Framework React per la produzione
+- **React 19** - Framework UI
+- **MDX** - Per la gestione dei contenuti
+- **Tailwind CSS** - Per lo styling
+- **Recharts** - Per la visualizzazione dei dati
+- **TypeScript** - Per la type safety
+
+## Come Iniziare
+
+1. Clona il repository
+2. Installa le dipendenze:
+
+```sh
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Avvia il server di sviluppo:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Build per la produzione:
 
-## Learn More
+```sh
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. Avvia il server di produzione:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+L'applicazione sarà disponibile all'indirizzo `http://localhost:3000`
 
-## Deploy on Vercel
+## Struttura del Progetto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [`docs`](docs) - Documentazione MDX e contenuti
+- [`src`](src) - Codice sorgente
+- [`public`](public) - Asset statici
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Sviluppo
+
+- Usa `npm run lint` per eseguire i controlli ESLint
+- Il progetto usa Prettier per la formattazione del codice
+- TypeScript è configurato per il type checking
+
+## Contributi
+
+- Per i **Grafici Interattivi** è stato preso come riferimento il progetto [Rpgchart](https://github.com/sam-sepi/Rpgchart) di [sam-sepi](https://github.com/sam-sepi).
