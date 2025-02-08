@@ -16,7 +16,43 @@ const barlow = Barlow({
 
 export const metadata: Metadata = {
     title: 'Slice & Dice',
-    description: 'Regole e sistemi per tuo gioco di ruolo',
+    description: 'Regole e sistemi per il tuo gioco di ruolo',
+    openGraph: {
+        title: 'Slice & Dice',
+        description: 'Regole e sistemi per il tuo gioco di ruolo',
+        url: 'https://www.slicendice.vercel.app',
+        siteName: 'Slice & Dice',
+        images: [
+            {
+                url: '/images/hero.jpg',
+                width: 1200,
+                height: 600,
+                alt: 'Slice & Dice Hero',
+            },
+        ],
+        locale: 'it_IT',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Slice & Dice',
+        description: 'Regole e sistemi per il tuo gioco di ruolo',
+        creator: '@SliceAndDice',
+    },
+    alternates: {
+        canonical: 'https://www.slicendice.vercel.app',
+    },
+    keywords: [
+        'Slice & Dice',
+        'Giochi di ruolo',
+        'Regole',
+        'Sistemi',
+        'Dadi',
+        'Dungeon Master',
+        'Giocatore',
+        'Play by Chat',
+        'Play by Forum',
+    ],
 }
 
 export default async function RootLayout({
