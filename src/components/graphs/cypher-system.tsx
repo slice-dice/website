@@ -38,28 +38,30 @@ export function CypherSystemGraph(): ReactElement {
 
     return (
         <div className="flex flex-col items-center gap-12 p-4">
-            <div className="flex gap-4">
-                <span className="my-auto font-medium">CD:</span>
-                <input
-                    type="number"
-                    min="1"
-                    max="10"
-                    value={difficulty}
-                    onChange={(e) => setDifficulty(Math.min(10, Math.max(1, Number(e.target.value))))}
-                    className="w-20 rounded border p-2"
-                />
-                <span className="my-auto font-medium">Tenacia:</span>
-                <input
-                    type="number"
-                    min="0"
-                    max="6"
-                    value={effort}
-                    onChange={(e) => setEffort(Math.min(6, Math.max(0, Number(e.target.value))))}
-                    className="w-20 rounded border p-2"
-                />
+            <div className="flex flex-col gap-4 sm:flex-row">
+                <div className="space-x-4">
+                    <span className="my-auto font-medium">CD:</span>
+                    <input
+                        type="number"
+                        min="1"
+                        max="10"
+                        value={difficulty}
+                        onChange={(e) => setDifficulty(Math.min(10, Math.max(1, Number(e.target.value))))}
+                        className="w-20 rounded border p-2"
+                    />
+                    <span className="my-auto font-medium">Tenacia:</span>
+                    <input
+                        type="number"
+                        min="0"
+                        max="6"
+                        value={effort}
+                        onChange={(e) => setEffort(Math.min(6, Math.max(0, Number(e.target.value))))}
+                        className="w-20 rounded border p-2"
+                    />
+                </div>
                 <button
                     onClick={simulateRolls}
-                    className="rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
+                    className="mx-auto whitespace-nowrap rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi
                 </button>
