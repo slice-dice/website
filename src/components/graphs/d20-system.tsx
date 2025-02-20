@@ -1,22 +1,17 @@
 'use client'
 
 import { useState, useCallback, ReactElement, useEffect } from 'react'
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts'
+import { PieChart, PieChartData } from '../graphs/charts/pie-chart'
 
 const COLORS = ['#2B6B5E', '#CC4A49']
 const ROLLS = 50
 const DICE_FACES = 20
 
-interface RollResult {
-    name: string
-    value: number
-}
-
 export function D20System(): ReactElement {
     const [difficulty, setDifficulty] = useState<number>(20)
     const [stat, setStat] = useState<number>(16)
     const [skill, setSkill] = useState<number>(9)
-    const [results, setResults] = useState<RollResult[]>([
+    const [results, setResults] = useState<PieChartData[]>([
         { name: 'Successi', value: 0 },
         { name: 'Fallimenti', value: 0 },
     ])
@@ -82,27 +77,7 @@ export function D20System(): ReactElement {
                 </button>
             </div>
 
-            <div className="h-[400px] w-full max-w-[600px]">
-                <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                        <Pie
-                            data={results}
-                            dataKey="value"
-                            nameKey="name"
-                            cx="50%"
-                            cy="50%"
-                            outerRadius={150}
-                            label={({ name, value }) => `${name}: ${value}`}
-                        >
-                            {results.map((_, index) => (
-                                <Cell key={`cell-${index}`} fill={COLORS[index]} />
-                            ))}
-                        </Pie>
-                        <Tooltip />
-                        <Legend />
-                    </PieChart>
-                </ResponsiveContainer>
-            </div>
+            <PieChart data={results} colors={COLORS} />
 
             <div className="text-center">
                 <p className="text-sm text-gray-500">
