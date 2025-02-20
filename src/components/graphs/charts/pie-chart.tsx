@@ -6,13 +6,7 @@ export interface PieChartData {
     value: number
 }
 
-export const PieChart = ({
-    data,
-    colors,
-}: {
-    data: Array<{ name: string; value: number }>
-    colors: string[]
-}): ReactElement => {
+export const PieChart = ({ data, colors }: { data: Array<PieChartData>; colors: string[] }): ReactElement => {
     return (
         <div className="h-[400px] w-full max-w-[600px] md:max-w-full">
             <ResponsiveContainer width="100%" height="100%">
