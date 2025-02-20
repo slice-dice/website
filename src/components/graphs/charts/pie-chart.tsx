@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { PieChart as RechartPieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts'
+import { PieChart as RechartsPieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts'
 
 export interface PieChartData {
     name: string
@@ -10,7 +10,7 @@ export const PieChart = ({ data, colors }: { data: Array<PieChartData>; colors: 
     return (
         <div className="h-[400px] w-full max-w-[600px] md:max-w-full">
             <ResponsiveContainer width="100%" height="100%">
-                <RechartPieChart>
+                <RechartsPieChart>
                     <Pie
                         data={data}
                         dataKey="value"
@@ -52,7 +52,7 @@ export const PieChart = ({ data, colors }: { data: Array<PieChartData>; colors: 
                     </Pie>
                     <Tooltip />
                     <Legend />
-                </RechartPieChart>
+                </RechartsPieChart>
             </ResponsiveContainer>
         </div>
     )
