@@ -17,6 +17,10 @@ const barlow = Barlow({
 export const metadata: Metadata = {
     title: 'Slice & Dice',
     description: 'Regole e sistemi per il tuo gioco di ruolo',
+    metadataBase: new URL('https://www.slicendice.vercel.app'),
+    alternates: {
+        canonical: '/',
+    },
     openGraph: {
         title: 'Slice & Dice',
         description: 'Regole e sistemi per il tuo gioco di ruolo',
@@ -38,9 +42,6 @@ export const metadata: Metadata = {
         title: 'Slice & Dice',
         description: 'Regole e sistemi per il tuo gioco di ruolo',
         creator: '@SliceAndDice',
-    },
-    alternates: {
-        canonical: 'https://www.slicendice.vercel.app',
     },
     keywords: [
         'Slice & Dice',
