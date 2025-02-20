@@ -62,7 +62,7 @@ export function OpenD6Graph(): ReactElement {
                 </div>
                 <button
                     onClick={simulateRolls}
-                    className="rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
+                    className="mx-auto whitespace-nowrap rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi
                 </button>
