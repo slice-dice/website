@@ -46,16 +46,16 @@ Questo è un paragrafo normale. Il testo verrà giustificato automaticamente.
 ```markdown
 <TableOfContent
 ids={
-[
-{
-id: "intro",
-title: "Introduzione"
-},
-{
-id: "meccaniche",
-title: "Meccaniche di gioco"
-}
-]
+    [
+        {
+            id: "intro",
+            title: "Introduzione"
+        },
+        {
+            id: "meccaniche",
+            title: "Meccaniche di gioco"
+        }
+    ]
 }
 />
 ```
@@ -159,16 +159,16 @@ Posiziona questi link alla fine del documento.
 
 <TableOfContent
 ids={
-[
-{
-id: "intro",
-title: "Introduzione"
-},
-{
-id: "meccaniche",
-title: "Meccaniche di gioco"
-}
-]
+    [
+        {
+            id: "intro",
+            title: "Introduzione"
+        },
+        {
+            id: "meccaniche",
+            title: "Meccaniche di gioco"
+        }
+    ]
 }
 />
 
