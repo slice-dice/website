@@ -33,4 +33,8 @@ export const gameplaySystems: SubRoute[] = [
         name: 'Storyteller System',
         url: 'storyteller-system',
     },
+    {
+        name: 'Year Zero Engine',
+        url: 'year-zero-engine',
+    },
 ]
