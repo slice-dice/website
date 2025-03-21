@@ -1,0 +1,261 @@
+# YEAR ZERO ENGINE
+
+<TableOfContent
+    ids={[
+        {
+            id: "intro",
+            title: "Introduzione"
+        },
+        {
+            id: "meccaniche",
+            title: "Meccaniche di gioco"
+        },
+        {
+            id: "punti",
+            title: "Punti di forza e debolezza"
+        },
+        {
+            id: "creazione",
+            title: "Creazione del personaggio"
+        },
+        {
+            id: "progressione",
+            title: "Progressione del personaggio"
+        },
+        {
+            id: "meccaniche",
+            title: "Meccaniche di gioco"
+        },
+        {
+            id: "combattimento",
+            title: "Combattimento"
+        },
+        {
+            id: "accorgimenti",
+            title: "Accorgimenti"
+        }
+    ]}
+/>
+
+<Anchor id="intro" />
+## Introduzione
+Year Zero Engine (YZE) è un sistema redatto da Fria Ligan e utilizzato in una vasta gamma di giochi di ruolo da tavolo che spaziano da *Alien* a *Blade Runner*, passando per *Coriolis*. Ma i titoli che adottano questo sistema non finiscono qui e quindi possiamo considerarlo un insieme di regole ormai ampiamente sperimentato.\
+Se dobbiamo trovare un *fil rouge*, possiamo dire che Year Zero Engine è stato utilizzato principalmente per ambientazioni **sci-fi**, di cui gestisce bene anche la componente **horror**, misteriosa e di esplorazione che è iconicamente rappresentata dalla serie *Alien*.\
+A dimostrazione però della versatilità generale del sistema, ricordiamo che YZE è stato utilizzato anche per alcuni giochi fantasy dalle tonalità cupe, come *Forbidden Lands*: rispetto ad altri sistemi tipicamente pensati per il fantasy, Year Zero Engine sviluppa in particolare il <b>lato survival</b>, con una particolare attenzione alla gestione delle risorse.
+
+<ImageBlock>
+    <Image>![Illustrazione di David Palumbo](/images/sistemi-di-gioco/year-zero-engine-1.jpg 'Illustrazione di [David Palumbo')</Image>
+    <ImageCaption>Illustrazione di [David Palumbo](https://it.pinterest.com/pin/10062799162863210/).</ImageCaption>
+</ImageBlock>
+
+Il sistema di gioco ha la particolarità di essere stato raffinato in due macro varianti che verranno entrambe presentate in questo compendio: <i><b>dice pool</b></i> e <i><b>step dice</b></i>, il primo sfruttato ad esempio da <i>Alien RPG</i> e il secondo da <i>Blade Runner RPG</i>.\
+I due approcci differiscono sia per il tipo e il numero di dadi lanciati, quindi per una differente impostazione numerica, sia per come questi numeri influiscono sul ritmo della narrativa. \
+<i>Dice pool</i> sfrutta pesantemente la meccanica del <b>panico</b> (ve la racconteremo bene più avanti) dettando un ritmo serrato che può ricordare Cyberpunk 2020. \
+La variante <i>step dice</i> è più contenuta nelle oscillazioni dei successi, restituendo un passo più bilanciato, perfetto per le tinte più <i>noir</i> di Blade Runner.
+
+<Anchor id="punti" />
+### Punti di forza
+<CenterBlock>
+Il sistema è ridotto veramente all’osso, il che significa che ci si familiarizza piuttosto in fretta sia dal punto di vista del narratore che del giocatore. Non richiede un enorme investimento di studio per poter mettere su un gioco funzionante.\
+È un sistema molto malleabile, dove è facile riscrivere o adattare le skill rispetto alla propria specifica ambientazione.\
+Nonostante il gioco dia il suo meglio in ambientazioni adrenaliniche, è più facile rispetto ad Interlock bilanciare il sistema per smussare gli spigoli che non piacerebbero ai giocatori del play by chat, soprattutto utilizzando la variante <i>step dice</i>.
+</CenterBlock>
+
+### Punti di debolezza
+<CenterBlock>
+L’altra faccia della medaglia della sua schematicità è che è davvero difficile rimuovere dei moduli di regolamento senza snaturarlo. Dobbiamo considerare questo sistema un <b>pacchetto “prendere o lasciare”</b>, perché eliminare dei pezzi di regole ne determina immediatamente la rottura. L’unica sezione che possiamo probabilmente considerare puramente opzionale è il combattimento tra veicoli.
+</CenterBlock>
+
+<Anchor id="creazione" />
+## Creazione del personaggio
+Ogni personaggio ha <b>4 statistiche</b> (Intuito, Agilità, Forza, Empatia) e ad ogni attributo si associano <b>3 abilità</b>. Il sistema ne definisce un set ben preciso, ma la declinazione effettiva dipende chiaramente dall’ambientazione scelta.
+
+### Esempio
+<CenterBlock>
+Solo per darvi un’idea generale del sistema, prendiamo qui in considerazione le abilità previste in <i>Alien RPG</i>.
+</CenterBlock>
+<Table>
+    <Thead>
+        <Tr>
+            <Th>STATISTICA</Th>
+            <Th>ABILITÀ</Th>
+        </Tr>
+    </Thead>
+    <Tbody>
+        <Tr>
+            <Td>Intuito</Td>
+            <Td>Sensi, Sistemi Elettronici, Sopravvivenza</Td>
+        </Tr>
+        <Tr>
+            <Td>Agilità</Td>
+            <Td>Mobilità, Pilotare, Combattimento a Distanza</Td>
+        </Tr>
+        <Tr>
+            <Td>Forza</Td>
+            <Td>Macchinari Pesanti, Stamina, Combattimento Ravvicinato</Td>
+        </Tr>
+        <Tr>
+            <Td>Empatia</Td>
+            <Td>Manipolazione, Medicina, Comando</Td>
+        </Tr>
+    </Tbody>
+</Table>
+
+Come vi abbiamo anticipato, il sistema inizia a biforcarsi a questo punto con le due varianti di cui vi abbiamo parlato sopra.\
+Nel <i>dice pool</i>, ogni attributo varia da un minimo di 1 ad un massimo di 5; ogni abilità varia da un minimo di 0 ad un massimo di 5.\
+Nello <i>step dice</i> ogni abilità e caratteristica è segnata con un grado di competenza che va da A (il migliore) fino a D (il peggiore). A seconda del grado di competenza viene assegnato un dado con un numero di facce sempre più alto via via che il grado di competenza sale.\
+La tabella che associa il grado di competenza al dado da tirare è la seguente:
+
+<Table>
+    <Thead>
+        <Tr>
+            <Th>Grado di competenza</Th>
+            <Th>Dado da tirare</Th>
+        </Tr>
+    </Thead>
+    <Tbody>
+        <Tr>
+            <Td>A</Td>
+            <Td>d12</Td>
+        </Tr>
+        <Tr>
+            <Td>B</Td>
+            <Td>d10</Td>
+        </Tr>
+        <Tr>
+            <Td>C</Td>
+            <Td>d8</Td>
+        </Tr>
+        <Tr>
+            <Td>D</Td>
+            <Td>d6</Td>
+        </Tr>
+    </Tbody>
+</Table>
+
+Ovviamente è possibile per le abilità anche il grado “0”, che corrisponde a non avere nessuna competenza, per cui si userà solo il dado derivante alla caratteristica.\
+Ogni personaggio deve selezionare anche la sua <b>Professione</b> (Medico, Ufficiale, Ragazzino, Marine Coloniale, Scienziato). Le diverse professioni impattano le statistiche nel modo che vedremo a breve e permettono anche di avere degli oggetti iniziali di un certo tipo e un’agenda personale.
+
+> L’<b>agenda personale</b>, cioè uno o più obiettivi cari al personaggio, dipende dall’ambientazione, ma il sistema incentiva il narratore a sceglierne o crearne una di comune accordo con il giocatore.
+
+Sempre per fare qualche esempio, in <i>Alien RPG</i> gli oggetti iniziali tipici per la professione Medico possono essere un kit chirurgico, una certa dose di farmaci specifici, un medikit personale o ancora una certa dose di farmaci sperimentali.
+
+<ImageBlock>
+    <Image>![Illustrazione reperita su Pinterest](/images/sistemi-di-gioco/year-zero-engine-2.jpg 'Illustrazione reperita su Pinterest')</Image>
+    <ImageCaption>Illustrazione reperita su [Pinterest](https://it.pinterest.com/pin/852517404498827723/).</ImageCaption>
+</ImageBlock>
+
+Dopo statistiche, abilità e professione, il giocatore può caratterizzare il proprio personaggio anche attraverso i <b>Talenti</b>, che offrono delle meccaniche per alterare i comportamenti base descritti nel regolamento, specializzando i personaggi. Alcuni talenti sono accessibili a chiunque, altri sono specifici di una Professione.
+
+### Esempio
+<CenterBlock>
+Per darvi un’idea dell’importanza dei talenti prendiamo ad esempio il talento generico <i>mitragliere</i>, che fa sì che il proprio livello di stress non salga quando si usa un’arma in modalità fuoco automatico. In assenza di tale talento, un personaggio che si trovi ad utilizzare un’arma con fuoco automatico, si limiterebbe a svuotare il caricatore, spesso urlando come un folle e senza colpire niente se non l’arredamento.
+</CenterBlock>
+
+A seconda dell'ambientazione, i punti esperienza da distribuire all’inizio sono diversi, ma tipicamente si ha un numero prefissato da distribuire tra caratteristiche ed abilità, spesso con dei massimali.
+
+### Esempio
+<CenterBlock>
+In Alien RPG, i valori iniziali vedono 14 punti da assegnare alle 4 statistiche, in un range che va da 2 come minimo a 4 come massimo.
+</CenterBlock>
+
+C’è un'importante eccezione: come avevamo anticipato, <u>la Professione incide sulle statistiche</u>. Alla <b>statistica chiave</b> della Professione del personaggio può essere assegnato un valore pari a 5.
+
+<Anchor id="progressione"/>
+## Progressione del personaggio
+I punti esperienza vengono assegnati a fine di ogni sessione di gioco e ogni ambientazione ha le sue metodologie, ma la più comune è quella di avere una lista di domande a cui, per ogni risposta positiva, si segna 1 punto esperienza.\
+Alcune domande suggerite dal sistema sono:
+
+✑ <i>Hai rischiato o sacrificato qualcosa di importante per conseguire la tua agenda personale?</i>\
+✑ <i>Hai rischiato la tua vita o quella del tuo miglior amico?</i>\
+✑ <i>Hai fatto un tiro di panico?</i>
+
+In un play by chat, queste domande potrebbero essere poste alla fine di ciascuna quest.\
+A questo metodo di assegnazione dei punti esperienza, si aggiunge la possibilità di assegnare ulteriori punti quando si fanno significativi step verso, o quando si raggiunge, la propria <b>agenda personale</b>. In fase di creazione del personaggio, il narratore dovrebbe stabilire degli step sensati per ogni agenda personale, premiando con un 1 punto esperienza il raggiungimento di ognuno di questi punti cruciali per la storia del personaggio.\
+In un play by chat con un numero molto significativo di giocatori immaginare degli step precisi verso il raggiungimento della propria agenda personale è sicuramente dispendioso per i narratori: ma è un lavoro che può pagare sul lungo termine e aiutare a dare una struttura solida alla narrazione individuale e collettiva.\
+Spendendo i punti esperienza guadagnati come descritto sopra, è possibile far salire un’abilità sfruttando una progressione a sommatoria moltiplicata per 5 (<b>il costo di un incremento è pari al valore nuovo nell’abilità moltiplicato per 5</b>) oppure acquistare un nuovo talento. Il costo di questo incremento è variabile a seconda dell’ambientazione, ma tipicamente è di 5 punti esperienza.
+
+### Esempio
+<CenterBlock>
+Quindi se vogliamo incrementare un’abilità dal livello 2 al livello 3, bisogna moltiplicare 3 per 5 e spendere 15 punti esperienza.
+</CenterBlock>
+
+> <b>Year Zero Engine non prevede un vero e proprio <i>level cap</i></b>, ma l’alta mortalità del sistema e la struttura delle campagne difficilmente porta a personaggi troppo sbilanciati.
+
+<Anchor id="meccaniche" />
+## Meccaniche di gioco
+La premessa che viene fatta nel manuale, spesso e volentieri, è che <b>non tutto è un tiro</b>.\
+Il tiro ha senso solo quando un fallimento comporta rovinare irreparabilmente quello su cui si sta operando o se si è sotto pressione ed il tempo non è un lusso che ci si può concedere.
+
+### Dice pool
+<CenterBlock>
+Per effettuare una prova si lanciano tanti <b>dadi a sei facce</b> (d6) quanto è la somma di <b>caratteristica + skill</b>. <u>Ogni risultato pari a 6 è considerato un successo</u> ed una prova è riuscita se si ottiene almeno un successo.
+Ulteriori successi possono essere tramutati in effetti aggiuntivi e collaterali (fai più danno; ci metti meno tempo; lo ripari così bene che funziona meglio; non fai rumore) che dipendono dalla specifica skill lanciata. Per ogni abilità è definito un “set” di opzioni interpretative extra. Normalmente il giocatore può scegliere quale selezionare, ma l’ultima parola sulla coerenza dell’interpretazione rispetto al contesto spetta al narratore.
+</CenterBlock>
+
+### Step dice
+<CenterBlock>
+Per effettuare una prova si lanciano <b>due dadi</b>, il cui numero di facce è determinato dal <b>grado di competenza della caratteristica e dell’abilità</b> lanciate per la prova (esempio, se uso un’abilità con grado B correlata ad un attributo con grado C lancerò un d10 ed un d8).\
+<u>Per ogni dado che ottiene un valore di almeno 6 si ottiene un successo</u>, se un dado ottiene invece 10 o più (possibile solo con d10 e d12, cioè per i gradi più elevati delle statistiche e delle abilità), i successi conteggiati sono due. Come per la variante <i>dice pool</i>, almeno un 6 garantisce successo nella prova, mentre i successi aggiuntivi migliorano il risultato complessivo del tentativo.
+</CenterBlock>
+
+### Differenze
+<CenterBlock>
+Adesso potete capire perché all’inizio abbiamo detto che <i>step dice</i> è una variante più adatta a giochi <i>noir</i> e bilanciati e <i>dice pool</i> a giochi adrenalinici e cinematici.\
+<u>Le due varianti si comportano allo stesso modo ai gradi di competenza più bassi</u>: in <i>step dice</i> un personaggio che effettua una prova per un’abilità in cui è estremamente carente (D nella caratteristica e niente all’abilità rilevante) lancerà comunque 1d6, esattamente come in <i>dice pool</i>.\
+Tuttavia, <u><i>dice pool</i> garantisce un rapido incremento di dadi (e quindi potenziali successi) al crescere della competenza di un personaggio</u>, finendo ad un massimale di ben 10 dadi (5 dadi per le statistiche e 5 dadi per le abilità, con un massimale di 10 successi), contro i 2d12 di <i>step dice</i> (1d12 massimo per la statistica e 1d12 massimo per l’abilità, con un massimale di 4 successi).
+</CenterBlock>
+
+<Anchor id="combattimenti" />
+## Combattimenti
+I tiri contrapposti si eseguono calcolando <b>chi ha fatto più successi</b>.\
+<u>In caso di parità, vince l’attacco</u>.\
+A questo primo, semplicissimo, step va aggiunta la meccanica del <b>push</b> di un tiro, cioè la possibilità di forzare un nuovo tiro nel caso non siate soddisfatti del primo risultato ottenuto.
+
+### PUSH
+<CenterBlock>
+In Year Zero Engine la meccanica di push varia da ambientazione ad ambientazione e in questa sede ve ne proponiamo due, una che si sposa molto bene con la versione <i>dice pool</i> (usata da Alien RPG) ed una che si sposa bene con <i>step dice</i> (usata in Blade Runner). <b>In entrambi i casi una prova può essere ritentata solo una volta</b>.
+</CenterBlock>
+
+### Step dice: DANNI e STRESS
+<CenterBlock>
+Se un lancio di dadi non vi sembra sufficientemente fortunato, potete “<i>pushare</i>” il tiro, cioè rilanciare tutti i dadi, <u>tranne quelli che hanno come risultato un 1</u>. Il valore del nuovo tiro deve essere categoricamente accettato e non si può “tornare indietro”, anche se il risultato è peggiore del primo. Per ogni dado che mostra un risultato di 1 dopo il nuovo tiro si soffre 1 punto danno per i lanci su Forza o Agilità oppure 1 punto stress per i lanci su Intuito o Empatia.\
+Ma cosa sono i punti stress, vi starete chiedendo?\
+In questa variante, <b>lo stress corrisponde ai punti ferita della statistica Sanità</b>, che simboleggia la salute mentale del personaggio. Se si subiscono sufficienti danni stress da azzerare il valore Sanità, il personaggio subisce dei veri e propri crolli psichici.
+</CenterBlock>
+
+### Dice pool: DADI STRESS
+<CenterBlock>
+Il giocatore aggiunge ai dadi che tirerebbe normalmente in base alle proprie caratteristiche ed abilità anche i <b>dadi stress</b>, in un numero che varia a seconda dei punti stress accumulati dal personaggio.\
+Il valore stress parte da 0 ma è molto facile guadagnare punti stress, che si acquisiscono nel tempo quando si sperimentano eventi drammatici, sovrannaturali o quando si assiste a scene particolarmente emotive (come un amico che cede al panico, come diremo tra poco).\
+Qualora si desideri è possibile "<i>pushare</i>" una prova, rilanciando tutti i dadi (anche quelli stress, se presenti) al costo di aumentare di 1 il valore del proprio stress (ovviamente, questo nuovo punto conferirà un dado extra al nuovo tiro). <u>Qualora anche solo uno dei dadi stress</u> (e solo quelli stress, non quelli normali) <u>mostri un risultato pari ad 1</u>, <u>la prova è automatica fallita</u> ed il personaggio cede al panico.
+</CenterBlock>
+
+### PANICO!
+<CenterBlock>
+Quando un personaggio cede al panico (come scritto sopra, o per altri motivi scelti da narratore) il personaggio deve fare un test di Panico. Per effettuare questo test, il giocatore lancia un d6 e ci somma i punti stress che possiede al momento e confronta il risultato con una piccola tabella di effetti. Si va dal risultato meno impattante come un lieve tremore (6 o meno), alla fuga incontrollata e priva di raziocinio (15 o più).
+</CenterBlock>
+
+<ImageBlock>
+    <Image>![Despair di Samael](/images/sistemi-di-gioco/year-zero-engine-3.jpg 'Despair di Samael')</Image>
+    <ImageCaption><i>Despair</i> di [Samael](https://it.pinterest.com/pin/887701776550329311/).</ImageCaption>
+</ImageBlock>
+
+> Il combattimento sociale è presente solo in determinate ambientazioni di Year Zero Engine e ha comunque un’impostazione molto lineare: in Alien RPG ad esempio viene espresso con sole due abilità, Manipolazione e Comando. I combattimenti sociali si riducono quindi ad un confronto semplice e diretto (e quindi un po’ privo di profondità) di Manipolazione vs. Manipolazione.
+
+Year Zero Engine offre un ampio elenco di armi iconiche e dettaglia ampiamente il sistema di gestione della salute e delle ferite. Dal punto di vista della modellizzazione dei combattimenti fisici e con armi da fuoco, il sistema vi offre già un ottimo pacchetto pronto all’uso per il quale vi rimandiamo direttamente al manuale, che ha già fatto tutto il lavoro al posto vostro. 
+
+<Anchor id="accorgimenti" />
+## Accorgimenti
+Come ottica di base, Year Zero One è pensato per poter essere montato su qualunque ambientazione, seppur si sposi realmente bene solo con quello <b>dove un concetto di “scontro” è auspicabile</b>.\
+Questo sistema è pensato per avere un’<b>alta mortalità per i personaggi</b>. Qualora questa caratteristica sia ritenuta troppo incisiva, serve intervenire per smussare un po’ gli spigoli del sistema.\
+Quanto alla gestione della magia, Year Zero Engine presenta anche un semplicissimo canovaccio di base su cui è possibile installare un sistema più complesso, dipendente dall’ambientazione stessa. Ma questo ovviamente richiede un attento lavoro di bilanciamento tutt’altro che non banale.\
+Le skill si prestano ad essere personalizzate agevolmente a seconda delle ambientazioni, quindi non abbiate timore di modificarle.\
+Anche l’assegnazione dei punti esperienza è da rivedere. L’assegnazione e le modalità di spesa dei punti esperienza devono essere bilanciate con l’esigenza del singolo gioco, tarando la progressione in base alla velocità di crescita desiderata dei personaggi.\
+Per quanto riguarda gli step dell’agenda personale, il sistema è pensato – come quasi tutti i giochi da tavolo – per 3 o 5 giocatori. Dal momento che in un gioco play by chat può arrivare ad averne trenta o anche di più, sarà essenziale semplificare questa dinamica, immaginando massimo un singolo step significativo prima del raggiungimento dell’obiettivo finale, oppure lasciando l’assegnazione dei punti alla sola dinamica delle domande e delle risposte.\
+Secondo la nostra sensibilità, la variante che più si adatta a giochi moderni o urban fantasy è lo <i>step dice</i>, mentre per ambientazioni cyberpunk, per l’horror adrenalinico, il survival e il post apocalittico la variante <i>dice pool</i> è decisamente più adatta a trasmettere la giusta sensazione di precarietà e morte dietro l’angolo.
+
+<ShoppingTips>Acquista Alien RPG: Destroyer of Worlds su [Amazon](https://www.amazon.it/Destroyer-of-Worlds-Alien-RPG/dp/9189143051) (ENG)</ShoppingTips>
+<ShoppingTips>Acquista Blade Runner RPG su [Amazon](https://www.amazon.it/Free-League-Blade-Runner-RPG/dp/9189143752)(ENG)</ShoppingTips>
+<ShoppingTips>Acquista Alien RPG: Starter Set su [DriveThruRPG]( https://www.drivethrurpg.com/en/product/320115/alien-rpg-starter-set) (ENG)</ShoppingTips>
+<ShoppingTips>Acquista Blade Runner RPG: Starter Set su [DriveThruRPG]( https://www.drivethrurpg.com/en/product/399964/blade-runner-rpg-starter-set) (ENG)</ShoppingTips>
