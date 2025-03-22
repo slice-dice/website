@@ -15,7 +15,10 @@ const barlow = Barlow({
 })
 
 export const metadata: Metadata = {
-    title: 'Slice & Dice',
+    title: {
+        template: '%s | Slice & Dice',
+        default: 'Slice & Dice',
+    },
     description: 'Regole e sistemi per il tuo gioco di ruolo',
     metadataBase: new URL('https://www.slicendice.vercel.app'),
     alternates: {
@@ -28,10 +31,10 @@ export const metadata: Metadata = {
         siteName: 'Slice & Dice',
         images: [
             {
-                url: '/images/hero.jpg',
+                url: '/images/banner.png',
                 width: 1200,
                 height: 600,
-                alt: 'Slice & Dice Hero',
+                alt: 'Slice & Dice',
             },
         ],
         locale: 'it_IT',

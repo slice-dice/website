@@ -1,6 +1,10 @@
 import { SubRoute } from './routes'
 
-export const interactiveGraphs: SubRoute[] = [
+export interface InteractiveGraph extends SubRoute {
+    description?: string
+}
+
+export const interactiveGraphs: InteractiveGraph[] = [
     {
         name: 'Basic Role Playing',
         url: 'basic-role-playing',
