@@ -45,6 +45,22 @@ export const metadata: Metadata = {
         title: 'Slice & Dice',
         description: 'Regole e sistemi per il tuo gioco di ruolo',
         creator: '@SliceAndDice',
+        site: 'https://www.slicendice.vercel.app',
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+    icons: {
+        icon: '/favicon.ico',
+        shortcut: '/favicon.ico',
     },
     keywords: [
         'Slice & Dice',
