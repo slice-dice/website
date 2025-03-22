@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+
 import { Main } from '@/components/main'
 import { Article } from '@/components/article'
 import { Anchor, TableOfContent, TableOfContentId } from '@/components/table-of-content'
@@ -16,7 +18,12 @@ const overrideMdxComponents = {
     OpenD6Charisma: ({ children }: { children: React.ReactNode }) => <span className="text-[#88578b]">{children}</span>,
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+type GameplaySystemPageProps = {
+    params: Promise<{ slug: string }>
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export default async function Page({ params }: GameplaySystemPageProps) {
     const slug = (await params).slug
     const { default: Docs } = await import(`../../../../docs/sistemi-di-gioco/${slug}.mdx`)
 
@@ -27,6 +34,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             </Article>
         </Main>
     )
+}
+
+export async function generateMetadata({ params }: GameplaySystemPageProps): Promise<Metadata> {
+    const slug = (await params).slug
+
+    const gameplaySystem = gameplaySystems.find(({ url }) => url === slug)
+
+    return {
+        title: gameplaySystem?.name ?? 'Sistema di gioco',
+        description: gameplaySystem?.description ?? `Pagina dedicata al sistema di gioco ${gameplaySystem?.name}`,
+    }
 }
 
 export function generateStaticParams() {

@@ -1,7 +1,12 @@
 import { Article } from '@/components/article'
 import { Main } from '@/components/main'
+import { Metadata } from 'next'
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+type PageParams = {
+    params: Promise<{ slug: string }>
+}
+
+export default async function Page({ params }: PageParams) {
     const slug = (await params).slug
     const { default: Docs } = await import(`../../../docs/${slug}.mdx`)
 
@@ -12,6 +17,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             </Article>
         </Main>
     )
+}
+
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+    const slug = (await params).slug
+
+    return {
+        title: slug.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase()) || '',
+    }
 }
 
 export function generateStaticParams() {
