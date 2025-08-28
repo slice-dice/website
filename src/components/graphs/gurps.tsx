@@ -50,7 +50,7 @@ export function GurpsGraph(): ReactElement {
                     max="18"
                     value={skill}
                     onChange={(e) => setSkill(Math.min(18, Math.max(0, Number(e.target.value))))}
-                    className="w-20 rounded border p-2"
+                    className="w-20 rounded-sm border p-2"
                 />
                 <button
                     onClick={simulateRolls}

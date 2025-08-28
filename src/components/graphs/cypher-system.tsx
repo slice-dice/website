@@ -48,7 +48,7 @@ export function CypherSystemGraph(): ReactElement {
                             max="10"
                             value={difficulty}
                             onChange={(e) => setDifficulty(Math.min(10, Math.max(1, Number(e.target.value))))}
-                            className="w-20 rounded border p-2"
+                            className="w-20 rounded-sm border p-2"
                         />
                     </div>
                     <div className="flex justify-between gap-4">
@@ -59,13 +59,13 @@ export function CypherSystemGraph(): ReactElement {
                             max="6"
                             value={effort}
                             onChange={(e) => setEffort(Math.min(6, Math.max(0, Number(e.target.value))))}
-                            className="w-20 rounded border p-2"
+                            className="w-20 rounded-sm border p-2"
                         />
                     </div>
                 </div>
                 <button
                     onClick={simulateRolls}
-                    className="mx-auto whitespace-nowrap rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
+                    className="mx-auto whitespace-nowrap rounded-sm bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi
                 </button>

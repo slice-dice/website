@@ -57,7 +57,7 @@ export function BasicRolePlayingGraph(): ReactElement {
                     max="100"
                     value={skill}
                     onChange={(e) => setSkill(Math.min(100, Math.max(1, Number(e.target.value))))}
-                    className="w-20 rounded border p-2"
+                    className="w-20 rounded-sm border p-2"
                 />
                 <button
                     onClick={simulateRolls}

@@ -49,7 +49,7 @@ function MenuToggle(): ReactElement {
     return (
         <button
             id="menu-toggle"
-            className="transition-color focus:border-dotted-2 m-0 ml-auto flex items-center gap-2 p-4 text-left text-[1.0625rem] duration-300 ease-in-out hover:text-[#CC4A49] focus:outline-none focus:ring-2 focus:ring-[#CC4A49] lg:hidden"
+            className="transition-color focus:border-dotted-2 m-0 ml-auto flex items-center gap-2 p-4 text-left text-[1.0625rem] duration-300 ease-in-out hover:text-[#CC4A49] focus:outline-hidden focus:ring-2 focus:ring-[#CC4A49] lg:hidden"
             aria-label="Menu"
             onClick={toggleMenu}
         >

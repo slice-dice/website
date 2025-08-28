@@ -44,7 +44,7 @@ export function OpenD6Graph(): ReactElement {
                         max="8"
                         value={increment}
                         onChange={(e) => setIncrement(Math.min(8, Math.max(1, Number(e.target.value))))}
-                        className="w-20 rounded border p-2"
+                        className="w-20 rounded-sm border p-2"
                     />
                     <span className="my-auto font-medium">D6</span>
                 </div>
@@ -56,13 +56,13 @@ export function OpenD6Graph(): ReactElement {
                         max="3"
                         value={partial}
                         onChange={(e) => setPartial(Math.min(3, Math.max(0, Number(e.target.value))))}
-                        className="w-20 rounded border p-2"
+                        className="w-20 rounded-sm border p-2"
                     />
                     <span className="my-auto font-medium">pip</span>
                 </div>
                 <button
                     onClick={simulateRolls}
-                    className="mx-auto whitespace-nowrap rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
+                    className="mx-auto whitespace-nowrap rounded-sm bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi
                 </button>
