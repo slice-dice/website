@@ -106,7 +106,7 @@ export function NavbarDropdownTrigger({ children }: { children: ReactNode }): Re
 
     return (
         <button
-            className={`dropdown-trigger transition-color flex items-center gap-2 duration-300 ease-in-out hover:text-[#CC4A49] ${isOpen ? 'text-[#CC4A49]' : ''} ${hasActiveLink && 'underline decoration-[3px] underline-offset-8'}`}
+            className={`dropdown-trigger transition-color flex cursor-pointer items-center gap-2 duration-300 ease-in-out hover:text-[#CC4A49] ${isOpen ? 'text-[#CC4A49]' : ''} ${hasActiveLink && 'underline decoration-[3px] underline-offset-8'}`}
             onClick={toggle}
         >
             {children}
@@ -119,7 +119,7 @@ export function NavbarDropdownMenu({ children }: { children: ReactNode }): React
 
     return (
         <div
-            className={`dropdown-menu absolute right-0 top-full z-10 mt-2 w-full border border-gray-200 bg-white p-2 shadow-lg sm:w-64 ${isOpen ? 'block' : 'hidden'}`}
+            className={`dropdown-menu absolute top-full right-0 z-10 mt-2 w-full border border-gray-200 bg-white p-2 shadow-lg sm:w-64 ${isOpen ? 'block' : 'hidden'}`}
         >
             {children}
         </div>
