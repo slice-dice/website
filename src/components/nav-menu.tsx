@@ -49,7 +49,7 @@ function MenuToggle(): ReactElement {
     return (
         <button
             id="menu-toggle"
-            className="transition-color focus:border-dotted-2 m-0 ml-auto flex items-center gap-2 p-4 text-left text-[1.0625rem] duration-300 ease-in-out hover:text-[#CC4A49] focus:outline-hidden focus:ring-2 focus:ring-[#CC4A49] lg:hidden"
+            className="transition-color focus:border-dotted-2 m-0 ml-auto flex items-center gap-2 p-4 text-left text-[1.0625rem] duration-300 ease-in-out hover:text-[#CC4A49] focus:ring-2 focus:ring-[#CC4A49] focus:outline-hidden lg:hidden"
             aria-label="Menu"
             onClick={toggleMenu}
         >
@@ -67,12 +67,12 @@ function Menu() {
     const { isMenuOpen } = useMenu()
 
     return (
-        <div className="relative mt-[2px] flex w-full lg:hidden">
+        <div className="mt-[2px] flex w-full lg:hidden">
             <nav
                 id="menu"
-                className={`transition-max-height w-full overflow-hidden duration-500 ease-in-out ${
-                    isMenuOpen ? 'max-h-screen' : 'max-h-0'
-                }`}
+                className={`w-full transition-all duration-500 ease-in-out ${
+                    isMenuOpen ? 'max-h-[2000px]' : 'max-h-0'
+                } overflow-hidden`}
             >
                 <ul className="m-0 mt-6 flex flex-col gap-2 p-0">
                     {routes.map(({ name, url, icon, items }, index) => {
