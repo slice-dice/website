@@ -61,7 +61,7 @@ export function BasicRolePlayingGraph(): ReactElement {
                 />
                 <button
                     onClick={simulateRolls}
-                    className="rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
+                    className="cursor-pointer rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi
                 </button>

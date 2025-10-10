@@ -79,7 +79,7 @@ export function D20System(): ReactElement {
                 </div>
                 <button
                     onClick={simulateRolls}
-                    className="mx-auto whitespace-nowrap rounded-sm bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
+                    className="mx-auto cursor-pointer rounded-sm bg-[#CC4A49] px-4 py-2 whitespace-nowrap text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi
                 </button>
