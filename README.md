@@ -1,4 +1,4 @@
-# Slice & Dice
+# Slice & Dice [![Netlify Status](https://api.netlify.com/api/v1/badges/358677dc-8fea-4306-af7e-3163e9d12da0/deploy-status)](https://app.netlify.com/projects/slicendiceit/deploys)
 
 > _To slice and dice is to break a body of information down into smaller parts or to examine it from different viewpoints so that you can understand it better._
 
