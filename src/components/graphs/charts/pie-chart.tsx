@@ -4,15 +4,24 @@ import { PieChart as RechartsPieChart, Pie, Cell, ResponsiveContainer, Legend, T
 export interface PieChartData {
     name: string
     value: number
+    [key: string]: string | number
 }
 
-export const PieChart = ({ data, colors }: { data: Array<PieChartData>; colors: string[] }): ReactElement => {
+export const PieChart = ({
+    data,
+    colors,
+}: {
+    data: Record<string, PieChartData> | PieChartData[]
+    colors: string[]
+}): ReactElement => {
+    const chartData = Array.isArray(data) ? data : Object.values(data)
+
     return (
         <div className="h-[400px] w-full max-w-[600px] md:max-w-full">
             <ResponsiveContainer width="100%" height="100%">
                 <RechartsPieChart>
                     <Pie
-                        data={data}
+                        data={chartData}
                         dataKey="value"
                         nameKey="name"
                         cx="50%"
@@ -22,31 +31,32 @@ export const PieChart = ({ data, colors }: { data: Array<PieChartData>; colors: 
                             className: 'hidden sm:block',
                         }}
                         label={({ cx, cy, midAngle, innerRadius, outerRadius, value, name }) => {
-                            if (value === 0) return null
+                            if (value === 0 || midAngle === undefined || midAngle === null) return null
 
                             if (window.innerWidth >= 640) {
                                 return `${name}: ${value}`
                             } else {
                                 const RADIAN = Math.PI / 180
-                                const radius = innerRadius + (outerRadius - innerRadius) * 0.7
-                                const x = cx + radius * Math.cos(-midAngle * RADIAN)
-                                const y = cy + radius * Math.sin(-midAngle * RADIAN)
+                                const radius =
+                                    (innerRadius as number) + ((outerRadius as number) - (innerRadius as number)) * 0.7
+                                const x = (cx as number) + radius * Math.cos(-midAngle * RADIAN)
+                                const y = (cy as number) + radius * Math.sin(-midAngle * RADIAN)
 
                                 return (
                                     <text
                                         x={x}
                                         y={y}
                                         fill="white"
-                                        textAnchor={x > cx ? 'start' : 'end'}
+                                        textAnchor={x > (cx as number) ? 'start' : 'end'}
                                         dominantBaseline="central"
                                     >
-                                        {value}
+                                        {String(value)}
                                     </text>
                                 )
                             }
                         }}
                     >
-                        {data.map((_, index) => (
+                        {chartData.map((_, index) => (
                             <Cell key={`cell-${index}`} fill={colors[index]} />
                         ))}
                     </Pie>

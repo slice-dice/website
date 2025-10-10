@@ -10,7 +10,7 @@ export function GraphRule({ children }: { children: React.ReactNode }) {
         <div className="mb-8">
             <div>
                 <button
-                    className="transition-color flex w-full items-center justify-between rounded-lg bg-[#094f56] px-4 py-2 text-left text-white duration-300 ease-in-out hover:bg-[#0c6b75] focus:outline-none"
+                    className="transition-color flex w-full cursor-pointer items-center justify-between rounded-lg bg-[#094f56] px-4 py-2 text-left text-white duration-300 ease-in-out hover:bg-[#0c6b75] focus:outline-hidden"
                     onClick={() => setCollapsed(!collapsed)}
                 >
                     <h3 className="text-lg font-bold">Regole</h3>

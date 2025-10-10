@@ -10,7 +10,7 @@ export function NavMenuLink({ href, children }: { href: string; children: ReactN
 
     return (
         <Link
-            className={`transition-color flex items-center gap-2 border-t p-4 text-[1.0625rem] duration-300 ease-in-out hover:text-[#CC4A49] ${isActiveLink && 'underline decoration-[1px] underline-offset-4'}`}
+            className={`transition-color flex items-center gap-2 border-t p-4 text-[1.0625rem] duration-300 ease-in-out hover:text-[#CC4A49] ${isActiveLink && 'underline decoration-1 underline-offset-4'}`}
             href={href}
         >
             {children}

@@ -24,7 +24,7 @@ export default function NotFound() {
                     <p className="m-0">
                         <Link
                             href={`/`}
-                            className="decoration-none bg-[#c9493b] px-6 py-4 text-[0.9375rem] text-[#fff] transition-colors duration-200 hover:bg-[#e36355] focus:outline-dotted active:bg-[#e36355] sm:text-[1rem] lg:text-[1.0625rem] xl:text-[1.125rem]"
+                            className="decoration-none bg-[#c9493b] px-6 py-4 text-[0.9375rem] text-white transition-colors duration-200 hover:bg-[#e36355] focus:outline-dotted active:bg-[#e36355] sm:text-[1rem] lg:text-[1.0625rem] xl:text-[1.125rem]"
                         >
                             &laquo; Torna alla home
                         </Link>

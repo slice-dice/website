@@ -20,14 +20,14 @@ export const metadata: Metadata = {
         default: 'Slice & Dice',
     },
     description: 'Regole e sistemi per il tuo gioco di ruolo',
-    metadataBase: new URL('https://www.slicendice.vercel.app'),
+    metadataBase: new URL('https://www.slicendice.it'),
     alternates: {
         canonical: '/',
     },
     openGraph: {
         title: 'Slice & Dice',
         description: 'Regole e sistemi per il tuo gioco di ruolo',
-        url: 'https://www.slicendice.vercel.app',
+        url: 'https://www.slicendice.it',
         siteName: 'Slice & Dice',
         images: [
             {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
         title: 'Slice & Dice',
         description: 'Regole e sistemi per il tuo gioco di ruolo',
         creator: '@SliceAndDice',
-        site: 'https://www.slicendice.vercel.app',
+        site: 'https://www.slicendice.it',
     },
     robots: {
         index: true,
@@ -87,7 +87,7 @@ export default async function RootLayout({
                     <div className="mx-auto my-0 w-full max-w-[1440px] overflow-hidden bg-white p-0">
                         <Header />
                         <Hero />
-                        <div className="px-6 pb-0 pt-6 sm:px-8 sm:pt-8 lg:px-16 lg:pt-16 xl:px-20 xl:pt-20">{children}</div>
+                        <div className="px-6 pt-6 pb-0 sm:px-8 sm:pt-8 lg:px-16 lg:pt-16 xl:px-20 xl:pt-20">{children}</div>
                         <Footer />
                     </div>
                 </ProgressBarProvider>

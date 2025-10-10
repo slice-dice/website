@@ -50,11 +50,11 @@ export function GurpsGraph(): ReactElement {
                     max="18"
                     value={skill}
                     onChange={(e) => setSkill(Math.min(18, Math.max(0, Number(e.target.value))))}
-                    className="w-20 rounded border p-2"
+                    className="w-20 rounded-sm border p-2"
                 />
                 <button
                     onClick={simulateRolls}
-                    className="rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
+                    className="cursor-pointer rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi
                 </button>
