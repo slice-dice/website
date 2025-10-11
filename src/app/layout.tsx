@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         siteName: 'Slice & Dice',
         images: [
             {
-                url: '/images/banner.png',
+                url: '/banner.png',
                 width: 1200,
                 height: 600,
                 alt: 'Slice & Dice',
@@ -46,6 +46,7 @@ export const metadata: Metadata = {
         description: 'Regole e sistemi per il tuo gioco di ruolo',
         creator: '@SliceAndDice',
         site: 'https://www.slicendice.it',
+        images: ['/banner.png'],
     },
     robots: {
         index: true,
