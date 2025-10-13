@@ -19,25 +19,25 @@ Questo è **Slice & Dice**, una piccola directory di sistemi di gioco per gli as
 2. Installa le dipendenze:
 
 ```sh
-npm install
+pnpm install
 ```
 
 3. Avvia il server di sviluppo:
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
 4. Build per la produzione:
 
 ```sh
-npm run build
+pnpm build
 ```
 
 5. Avvia il server di produzione:
 
 ```sh
-npm run start
+pnpm start
 ```
 
 L'applicazione sarà disponibile all'indirizzo `http://localhost:3000`
@@ -50,7 +50,7 @@ L'applicazione sarà disponibile all'indirizzo `http://localhost:3000`
 
 ## Sviluppo
 
-- Usa `npm run lint` per eseguire i controlli ESLint
+- Usa `pnpm lint` per eseguire i controlli ESLint
 - Il progetto usa Prettier per la formattazione del codice
 - TypeScript è configurato per il type checking
 
