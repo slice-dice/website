@@ -6,7 +6,7 @@ Questo è **Slice & Dice**, una piccola directory di sistemi di gioco per gli as
 
 ## Stack Tecnologico
 
-- **Next.js 15** - Framework React per la produzione
+- **Next.js 16** - Framework React per la produzione
 - **React 19** - Framework UI
 - **MDX** - Per la gestione dei contenuti
 - **Tailwind CSS** - Per lo styling
