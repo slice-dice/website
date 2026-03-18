@@ -1,40 +1,42 @@
 'use client'
 
-import { useState, useCallback, ReactElement, useEffect } from 'react'
+import { useState, useCallback, ReactElement, useRef } from 'react'
 import { PieChart, PieChartData } from '../graphs/charts/pie-chart'
 
 const COLORS = ['#2B6B5E', '#CC4A49']
 const ROLLS = 50
 const DICE_FACES = 20
+const DEFAULT_DIFFICULTY_VALUE = 5
+const DEFAULT_EFFORT_VALUE = 1
+
+function simulateRolls(difficulty: number, effort: number): PieChartData[] {
+    let successes = 0
+
+    // Simulate 50 dice rolls
+    for (let i = 0; i < ROLLS; i++) {
+        const roll = Math.floor(Math.random() * DICE_FACES) + 1
+        if (roll >= (difficulty - effort) * 3) {
+            successes++
+        }
+    }
+
+    return [
+        { name: 'Successi', value: successes },
+        { name: 'Fallimenti', value: ROLLS - successes },
+    ]
+}
 
 export function CypherSystemGraph(): ReactElement {
-    const [difficulty, setDifficulty] = useState<number>(5)
-    const [effort, setEffort] = useState<number>(1)
-    const [results, setResults] = useState<PieChartData[]>([
-        { name: 'Successi', value: 0 },
-        { name: 'Fallimenti', value: 0 },
-    ])
+    const difficultyRef = useRef<HTMLInputElement>(null)
+    const effortRef = useRef<HTMLInputElement>(null)
+    const [results, setResults] = useState<PieChartData[]>(simulateRolls(DEFAULT_DIFFICULTY_VALUE, DEFAULT_EFFORT_VALUE))
 
-    const simulateRolls = useCallback(() => {
-        let successes = 0
-
-        // Simulate 50 dice rolls
-        for (let i = 0; i < ROLLS; i++) {
-            const roll = Math.floor(Math.random() * DICE_FACES) + 1
-            if (roll >= (difficulty - effort) * 3) {
-                successes++
-            }
-        }
-
-        setResults([
-            { name: 'Successi', value: successes },
-            { name: 'Fallimenti', value: ROLLS - successes },
-        ])
-    }, [difficulty, effort])
-
-    useEffect(() => {
-        simulateRolls()
-    }, [simulateRolls])
+    const handleSubmit = useCallback(() => {
+        const difficulty = difficultyRef.current ? parseInt(difficultyRef.current.value) : 0
+        const effort = effortRef.current ? parseInt(effortRef.current.value) : 0
+        const newResults = simulateRolls(difficulty, effort)
+        setResults(newResults)
+    }, [])
 
     return (
         <div className="flex flex-col items-center gap-12 p-4">
@@ -46,8 +48,8 @@ export function CypherSystemGraph(): ReactElement {
                             type="number"
                             min="1"
                             max="10"
-                            value={difficulty}
-                            onChange={(e) => setDifficulty(Math.min(10, Math.max(1, Number(e.target.value))))}
+                            ref={difficultyRef}
+                            defaultValue={DEFAULT_DIFFICULTY_VALUE}
                             className="w-20 rounded-sm border p-2"
                         />
                     </div>
@@ -57,14 +59,14 @@ export function CypherSystemGraph(): ReactElement {
                             type="number"
                             min="0"
                             max="6"
-                            value={effort}
-                            onChange={(e) => setEffort(Math.min(6, Math.max(0, Number(e.target.value))))}
+                            ref={effortRef}
+                            defaultValue={DEFAULT_EFFORT_VALUE}
                             className="w-20 rounded-sm border p-2"
                         />
                     </div>
                 </div>
                 <button
-                    onClick={simulateRolls}
+                    onClick={handleSubmit}
                     className="mx-auto cursor-pointer rounded-sm bg-[#CC4A49] px-4 py-2 whitespace-nowrap text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi

@@ -1,51 +1,49 @@
 'use client'
 
-import { useState, useCallback, ReactElement, useEffect } from 'react'
+import { useCallback, ReactElement, useRef, useState } from 'react'
 import { PieChart, PieChartData } from '../graphs/charts/pie-chart'
 
 const COLORS = ['#2B6B5E', '#3B8F7C', '#4FB3A9', '#CC4A49']
 const ROLLS = 50
 const DICE_FACES = 100
+const DEFAULT_SKILL_VALUE = 55
 
-export function BasicRolePlayingGraph(): ReactElement {
-    const [skill, setSkill] = useState<number>(55)
-    const [results, setResults] = useState<PieChartData[]>([
-        { name: 'Successi', value: 0 },
-        { name: 'Successi ardui', value: 0 },
-        { name: 'Successi estremi', value: 0 },
-        { name: 'Fallimenti', value: 0 },
-    ])
+function simulateRolls(skill: number): PieChartData[] {
+    let successes = 0
+    let hardSuccesses = 0
+    let extremeSuccesses = 0
 
-    const simulateRolls = useCallback(() => {
-        let successes = 0
-        let hardSuccesses = 0
-        let extremeSuccesses = 0
-
-        // Simulate 50 dice rolls
-        for (let i = 0; i < ROLLS; i++) {
-            const roll = Math.floor(Math.random() * DICE_FACES) + 1
-            if (roll <= skill) {
-                if (roll <= skill / 5) {
-                    extremeSuccesses++
-                } else if (roll <= skill / 2) {
-                    hardSuccesses++
-                } else {
-                    successes++
-                }
+    // Simulate 50 dice rolls
+    for (let i = 0; i < ROLLS; i++) {
+        const roll = Math.floor(Math.random() * DICE_FACES) + 1
+        if (roll <= skill) {
+            if (roll <= skill / 5) {
+                extremeSuccesses++
+            } else if (roll <= skill / 2) {
+                hardSuccesses++
+            } else {
+                successes++
             }
         }
+    }
 
-        setResults([
-            { name: 'Successi', value: successes },
-            { name: 'Successi ardui', value: hardSuccesses },
-            { name: 'Successi estremi', value: extremeSuccesses },
-            { name: 'Fallimenti', value: ROLLS - (successes + hardSuccesses + extremeSuccesses) },
-        ])
-    }, [skill])
+    return [
+        { name: 'Successi', value: successes ?? 0 },
+        { name: 'Successi ardui', value: hardSuccesses ?? 0 },
+        { name: 'Successi estremi', value: extremeSuccesses ?? 0 },
+        { name: 'Fallimenti', value: ROLLS - ((successes ?? 0) + (hardSuccesses ?? 0) + (extremeSuccesses ?? 0)) },
+    ]
+}
 
-    useEffect(() => {
-        simulateRolls()
-    }, [simulateRolls])
+export function BasicRolePlayingGraph(): ReactElement {
+    const skillRef = useRef<HTMLInputElement>(null)
+    const [results, setResults] = useState<PieChartData[]>(simulateRolls(DEFAULT_SKILL_VALUE))
+
+    const handleSubmit = useCallback(() => {
+        const skill = skillRef.current ? parseInt(skillRef.current.value) : 0
+        const newResults = simulateRolls(skill)
+        setResults(newResults)
+    }, [])
 
     return (
         <div className="flex flex-col items-center gap-12 p-4">
@@ -55,12 +53,12 @@ export function BasicRolePlayingGraph(): ReactElement {
                     type="number"
                     min="1"
                     max="100"
-                    value={skill}
-                    onChange={(e) => setSkill(Math.min(100, Math.max(1, Number(e.target.value))))}
                     className="w-20 rounded-sm border p-2"
+                    ref={skillRef}
+                    defaultValue={DEFAULT_SKILL_VALUE}
                 />
                 <button
-                    onClick={simulateRolls}
+                    onClick={handleSubmit}
                     className="cursor-pointer rounded bg-[#CC4A49] px-4 py-2 text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi

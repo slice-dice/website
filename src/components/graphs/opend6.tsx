@@ -1,38 +1,48 @@
 'use client'
 
-import { useState, useCallback, ReactElement, useEffect } from 'react'
+import { useState, useCallback, ReactElement, useRef } from 'react'
 import { LineChart, LineChartData } from './charts/line-chart'
 
 const ROLLS = 50
 const DICE_FACES = 6
+const DEFAULT_INCREMENT_VALUE = 3
+const DEFAULT_PARTIAL_VALUE = 2
 
-export function OpenD6Graph(): ReactElement {
-    const [increment, setIncrement] = useState<number>(3)
-    const [partial, setPartial] = useState<number>(2)
-    const [results, setResults] = useState<LineChartData[]>([])
+function simulateRolls(increment: number, partial: number): LineChartData[] {
+    const resultsArray: LineChartData[] = []
 
-    const simulateRolls = useCallback(() => {
-        const resultsArray: LineChartData[] = []
+    // Simulate 50 dice rolls
+    for (let i = 0; i < ROLLS; i++) {
+        let sumIncrement = 0
 
-        // Simulate 50 dice rolls
-        for (let i = 0; i < ROLLS; i++) {
-            let sumIncrement = 0
-
-            for (let j = 0; j < increment; j++) {
-                sumIncrement += Math.floor(Math.random() * DICE_FACES) + 1
-            }
-
-            const roll = sumIncrement + partial
-
-            resultsArray.push({ name: i + 1, value: roll })
+        for (let j = 0; j < increment; j++) {
+            sumIncrement += Math.floor(Math.random() * DICE_FACES) + 1
         }
 
-        setResults(resultsArray)
-    }, [increment, partial])
+        const roll = sumIncrement + partial
 
-    useEffect(() => {
-        simulateRolls()
-    }, [simulateRolls])
+        resultsArray.push({ name: i + 1, value: roll })
+    }
+
+    return resultsArray
+}
+
+export function OpenD6Graph(): ReactElement {
+    const [increment, setIncrement] = useState<number>(DEFAULT_INCREMENT_VALUE)
+    const [partial, setPartial] = useState<number>(DEFAULT_PARTIAL_VALUE)
+    const incrementRef = useRef<HTMLInputElement>(null)
+    const partialRef = useRef<HTMLInputElement>(null)
+    const [results, setResults] = useState<LineChartData[]>(simulateRolls(DEFAULT_INCREMENT_VALUE, DEFAULT_PARTIAL_VALUE))
+
+    const handleSubmit = useCallback(() => {
+        const increment = incrementRef.current ? parseInt(incrementRef.current.value) : 0
+        const partial = partialRef.current ? parseInt(partialRef.current.value) : 0
+        const newResults = simulateRolls(increment, partial)
+        // Update state with new results and input values
+        setResults(newResults)
+        setIncrement(increment)
+        setPartial(partial)
+    }, [])
 
     return (
         <div className="flex flex-col items-center gap-12 p-4">
@@ -42,8 +52,8 @@ export function OpenD6Graph(): ReactElement {
                         type="number"
                         min="1"
                         max="8"
-                        value={increment}
-                        onChange={(e) => setIncrement(Math.min(8, Math.max(1, Number(e.target.value))))}
+                        ref={incrementRef}
+                        defaultValue={DEFAULT_INCREMENT_VALUE}
                         className="w-20 rounded-sm border p-2"
                     />
                     <span className="my-auto font-medium">D6</span>
@@ -54,14 +64,14 @@ export function OpenD6Graph(): ReactElement {
                         type="number"
                         min="0"
                         max="3"
-                        value={partial}
-                        onChange={(e) => setPartial(Math.min(3, Math.max(0, Number(e.target.value))))}
+                        ref={partialRef}
+                        defaultValue={DEFAULT_PARTIAL_VALUE}
                         className="w-20 rounded-sm border p-2"
                     />
                     <span className="my-auto font-medium">pip</span>
                 </div>
                 <button
-                    onClick={simulateRolls}
+                    onClick={handleSubmit}
                     className="mx-auto cursor-pointer rounded-sm bg-[#CC4A49] px-4 py-2 whitespace-nowrap text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi
