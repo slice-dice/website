@@ -1,33 +1,38 @@
 'use client'
 
-import { useState, useCallback, ReactElement, useEffect } from 'react'
+import { useState, useCallback, ReactElement, useEffect, useRef } from 'react'
 import { LineChart, LineChartData } from './charts/line-chart'
 
 const ROLLS = 50
 const DICE_FACES = 10
+const DEFAULT_SKILL_VALUE = 5
+const DEFAULT_STAT_VALUE = 6
+
+function simulateRolls(stat: number, skill: number): LineChartData[] {
+    const resultsArray: LineChartData[] = []
+
+    // Simulate 50 dice rolls
+    for (let i = 0; i < ROLLS; i++) {
+        const roll = Math.floor(Math.random() * DICE_FACES) + 1
+        const value = roll + stat + skill
+
+        resultsArray.push({ name: i + 1, value })
+    }
+
+    return resultsArray
+}
 
 export function InterlockGraph(): ReactElement {
-    const [skill, setSkill] = useState<number>(5)
-    const [stat, setStat] = useState<number>(6)
-    const [results, setResults] = useState<LineChartData[]>([])
+    const skillRef = useRef<HTMLInputElement>(null)
+    const statRef = useRef<HTMLInputElement>(null)
+    const [results, setResults] = useState<LineChartData[]>(simulateRolls(DEFAULT_STAT_VALUE, DEFAULT_SKILL_VALUE))
 
-    const simulateRolls = useCallback(() => {
-        const resultsArray: LineChartData[] = []
-
-        // Simulate 50 dice rolls
-        for (let i = 0; i < ROLLS; i++) {
-            const roll = Math.floor(Math.random() * DICE_FACES) + 1
-            const value = roll + stat + skill
-
-            resultsArray.push({ name: i + 1, value })
-        }
-
-        setResults(resultsArray)
-    }, [skill, stat])
-
-    useEffect(() => {
-        simulateRolls()
-    }, [simulateRolls])
+    const handleSubmit = useCallback(() => {
+        const stat = statRef.current ? parseInt(statRef.current.value) : 0
+        const skill = skillRef.current ? parseInt(skillRef.current.value) : 0
+        const newResults = simulateRolls(stat, skill)
+        setResults(newResults)
+    }, [])
 
     return (
         <div className="flex flex-col items-center gap-12 p-4">
@@ -39,8 +44,8 @@ export function InterlockGraph(): ReactElement {
                             type="number"
                             min="1"
                             max="10"
-                            value={stat}
-                            onChange={(e) => setStat(Math.min(10, Math.max(1, Number(e.target.value))))}
+                            ref={statRef}
+                            defaultValue={DEFAULT_STAT_VALUE}
                             className="w-20 rounded-sm border p-2"
                         />
                     </div>
@@ -50,14 +55,14 @@ export function InterlockGraph(): ReactElement {
                             type="number"
                             min="1"
                             max="10"
-                            value={skill}
-                            onChange={(e) => setSkill(Math.min(10, Math.max(1, Number(e.target.value))))}
+                            ref={skillRef}
+                            defaultValue={DEFAULT_SKILL_VALUE}
                             className="w-20 rounded-sm border p-2"
                         />
                     </div>
                 </div>
                 <button
-                    onClick={simulateRolls}
+                    onClick={handleSubmit}
                     className="mx-auto cursor-pointer rounded-sm bg-[#CC4A49] px-4 py-2 whitespace-nowrap text-white transition-colors hover:bg-[#a63c3b]"
                 >
                     Tira i dadi
