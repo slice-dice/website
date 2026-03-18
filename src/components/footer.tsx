@@ -10,7 +10,7 @@ type FooterLinkProps = {
 function FooterLink({ href, children }: FooterLinkProps): ReactElement {
     return (
         <Link
-            className="flex items-center gap-4 px-8 py-4 text-sm font-medium uppercase tracking-[1.3] text-[#CC4A49] transition-transform duration-300 ease-in-out hover:scale-105 md:justify-between md:text-lg"
+            className="flex items-center gap-4 px-8 py-4 text-sm font-medium tracking-[1.3] text-[#CC4A49] uppercase transition-transform duration-300 ease-in-out hover:scale-105 md:justify-between md:text-lg"
             href={href}
         >
             {children}
@@ -19,6 +19,8 @@ function FooterLink({ href, children }: FooterLinkProps): ReactElement {
 }
 
 export async function Footer(): Promise<ReactElement> {
+    const currentYear = new Date().getFullYear()
+
     return (
         <footer className="bg-background p-4 text-center text-white" style={{ boxShadow: '0 0 10px 0 rgba(0,0,0,0.5)' }}>
             <div className="mx-auto flex max-w-[880px] flex-col flex-wrap gap-6 md:gap-8">
@@ -43,7 +45,7 @@ export async function Footer(): Promise<ReactElement> {
                 <section className="flex flex-col flex-wrap justify-center text-xs text-[#CC4A49] sm:flex-row">
                     <div className="text-center sm:text-left">
                         <p>
-                            Copyright © 2025 Slice & Dice | Powered by{' '}
+                            Copyright © {currentYear} Slice & Dice | Powered by{' '}
                             <Link href={'/'} className="text-[#CC4A49] hover:underline">
                                 Slice & Dice
                             </Link>
