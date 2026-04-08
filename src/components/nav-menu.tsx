@@ -67,11 +67,11 @@ function Menu() {
     const { isMenuOpen } = useMenu()
 
     return (
-        <div className="mt-[2px] flex w-full lg:hidden">
+        <div className="mt-0.5 flex w-full lg:hidden">
             <nav
                 id="menu"
                 className={`w-full transition-all duration-500 ease-in-out ${
-                    isMenuOpen ? 'max-h-[2000px]' : 'max-h-0'
+                    isMenuOpen ? 'max-h-500' : 'max-h-0'
                 } overflow-hidden`}
             >
                 <ul className="m-0 mt-6 flex flex-col gap-2 p-0">

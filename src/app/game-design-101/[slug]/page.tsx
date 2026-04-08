@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { gameDesign101 } from '@/data/game-design-101'
 
 const overrideMdxComponents = {
-    p: ({ children }: { children: React.ReactNode }) => <p className="m-0 mb-6 p-[20px] text-justify">{children}</p>,
+    p: ({ children }: { children: React.ReactNode }) => <p className="m-0 mb-6 p-5 text-justify">{children}</p>,
     h4: ({ children }: { children: React.ReactNode }) => (
         <h4 className="m-0 mb-6 text-justify text-[90%] italic">{children}</h4>
     ),
@@ -18,7 +18,7 @@ const overrideMdxComponents = {
         <Image src={src} alt={alt} title={title} width={423} height={365} />
     ),
     ImageCaption: ({ children }: { children: React.ReactNode }) => (
-        <figcaption className="mb-4 mt-2 text-center text-[1rem] text-black/50">{children}</figcaption>
+        <figcaption className="mt-2 mb-4 text-center text-[1rem] text-black/50">{children}</figcaption>
     ),
     ImageAuthor: ({
         alt,
@@ -39,7 +39,7 @@ const overrideMdxComponents = {
                     <Image src={src} alt={alt} width={width} height={height} title={alt} />
                 </figure>
             </div>
-            <figcaption className="mb-4 mt-2 text-center text-[1rem] text-black/50">{children}</figcaption>
+            <figcaption className="mt-2 mb-4 text-center text-[1rem] text-black/50">{children}</figcaption>
         </>
     ),
 }
@@ -63,7 +63,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 <Article>
                     <header>
                         {currentSlug?.categories && <CateroriesList categories={currentSlug.categories} />}
-                        <h1 className="m-0 mb-4 break-words p-0 text-2xl font-bold text-[#CC4A49] sm:mb-6 sm:text-3xl lg:mb-7 lg:text-4xl xl:mb-8 xl:text-5xl">
+                        <h1 className="m-0 mb-4 p-0 text-2xl font-bold wrap-break-word text-[#CC4A49] sm:mb-6 sm:text-3xl lg:mb-7 lg:text-4xl xl:mb-8 xl:text-5xl">
                             {currentSlug?.name}
                         </h1>
                     </header>
@@ -71,23 +71,23 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 </Article>
             </Main>
             <MainFooter>
-                <nav className="mx-auto my-0 w-full max-w-[1120px]">
+                <nav className="mx-auto my-0 w-full max-w-280">
                     <div className="flex">
                         {prevSlug && (
-                            <div className="m-0 w-1/2 break-words pr-4">
+                            <div className="m-0 w-1/2 pr-4 wrap-break-word">
                                 <Link href={`/game-design-101/${prevSlug.url}`}>
                                     <span className="block text-black/50">&laquo; Articolo precedente</span>
-                                    <h3 className="text-[1.25rem] font-bold leading-[1.4] text-[#CC4A49] no-underline hover:text-[#e36355] focus:outline-dotted active:text-[#e36355] lg:text-[1.375rem] lg:leading-[1.4] xl:text-[1.5rem] xl:leading-[1.4]">
+                                    <h3 className="text-[1.25rem] leading-[1.4] font-bold text-[#CC4A49] no-underline hover:text-[#e36355] focus:outline-dotted active:text-[#e36355] lg:text-[1.375rem] lg:leading-[1.4] xl:text-[1.5rem] xl:leading-[1.4]">
                                         {prevSlug.name}
                                     </h3>
                                 </Link>
                             </div>
                         )}
                         {nextSlug && (
-                            <div className="m-0 w-1/2 break-words pl-4 text-right">
+                            <div className="m-0 w-1/2 pl-4 text-right wrap-break-word">
                                 <Link href={`/game-design-101/${nextSlug.url}`}>
                                     <span className="block text-black/50">Articolo successivo &raquo;</span>
-                                    <h3 className="text-[1.25rem] font-bold leading-[1.4] text-[#CC4A49] no-underline hover:text-[#e36355] focus:outline-dotted active:text-[#e36355] lg:text-[1.375rem] lg:leading-[1.4] xl:text-[1.5rem] xl:leading-[1.4]">
+                                    <h3 className="text-[1.25rem] leading-[1.4] font-bold text-[#CC4A49] no-underline hover:text-[#e36355] focus:outline-dotted active:text-[#e36355] lg:text-[1.375rem] lg:leading-[1.4] xl:text-[1.5rem] xl:leading-[1.4]">
                                         {nextSlug.name}
                                     </h3>
                                 </Link>

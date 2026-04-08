@@ -6,7 +6,7 @@ export default function NotFound() {
     return (
         <Main>
             <header>
-                <h1 className="m-0 mb-4 break-words p-0 text-center text-2xl font-bold text-[#CC4A49] sm:mb-6 sm:text-3xl lg:mb-7 lg:text-4xl xl:mb-8 xl:text-5xl">
+                <h1 className="m-0 mb-4 p-0 text-center text-2xl font-bold break-words text-[#CC4A49] sm:mb-6 sm:text-3xl lg:mb-7 lg:text-4xl xl:mb-8 xl:text-5xl">
                     Ops... pagina non trovata!
                 </h1>
             </header>

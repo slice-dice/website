@@ -82,10 +82,10 @@ export default async function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" data-scroll-behavior="smooth">
             <body className={`${barlow.variable} px-0 antialiased sm:px-4 md:px-6 lg:px-8`}>
                 <ProgressBarProvider>
-                    <div className="mx-auto my-0 w-full max-w-[1440px] overflow-hidden bg-white p-0">
+                    <div className="mx-auto my-0 w-full max-w-360 overflow-hidden bg-white p-0">
                         <Header />
                         <Hero />
                         <div className="px-6 pt-6 pb-0 sm:px-8 sm:pt-8 lg:px-16 lg:pt-16 xl:px-20 xl:pt-20">{children}</div>

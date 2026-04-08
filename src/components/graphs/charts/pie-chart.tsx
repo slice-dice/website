@@ -17,7 +17,7 @@ export const PieChart = ({
     const chartData = Array.isArray(data) ? data : Object.values(data)
 
     return (
-        <div className="h-[400px] w-full max-w-[600px] md:max-w-full">
+        <div className="h-100 w-full max-w-150 md:max-w-full">
             <ResponsiveContainer width="100%" height="100%">
                 <RechartsPieChart>
                     <Pie
